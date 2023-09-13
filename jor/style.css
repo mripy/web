@@ -63,7 +63,7 @@ header {
   height: 200px;
   line-height: 200px;
   text-align: center;
-  background: #deaf0c;
+  background: #7a4001;
 }
 header h1 {
   color: #ffffff;
@@ -265,12 +265,12 @@ header h1 {
 .cd-timeline-content .cd-read-more {
   float: right;
   padding: 0.8em 1em;
-  background: #deaf0c;
+  background: #7a4001;
   color: #ffffff;
   border-radius: 0.25em;
 }
 .no-touch .cd-timeline-content .cd-read-more:hover {
-  background-color: #deaf0c;
+  background-color: #7a4001;
 }
 .cd-timeline-content .cd-date {
   float: left;

@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #8f2927;
+    color: white;
+    padding: 20px;
+    align-items: center;
+}
+
+footer {
+    background-color: #8f2927;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto; /* Coloca el pie de página en la parte inferior */
+}
+
+
+.logo {
+    max-width: 50px;
+    height: auto;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.titulo h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.titulo h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.grilla {
+    list-style-type: disc; /* Estilo de viñetas con forma de pelotita */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    justify-content: center;
+    padding-left: 40px; /* Espacio a la izquierda para las viñetas */
+}
+
+.item {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+p {
+    font-size: 14px;
+}
+
+.boton {
+    display: block;
+    background-color: #8f2927;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.boton:hover {
+    background-color: #5d1a18;
+}
+
+/* Media queries para estilos responsivos */
+@media screen and (max-width: 768px) {
+    .grilla {
+        grid-template-columns: 1fr;
+    }
+
+    .item {
+        width: 100%;
+    }
+}
+

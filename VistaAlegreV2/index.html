@@ -1,0 +1,748 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Vista Alegre S.A. </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Agregar efecto de desplazamiento suave a todos los enlaces
+  $('a[href^="#"]').on('click', function(event) {
+    var target = $(this.getAttribute('href'));
+    if (target.length) {
+      event.preventDefault();
+      $('html, body').stop().animate({
+        scrollTop: target.offset().top
+      }, 1000); // 1000 milisegundos = 1 segundo
+    }
+  });
+});
+</script>
+
+
+<style>
+    /* Estilo para el contenedor del pop-up */
+    .popup-container {
+        display: none; /* El pop-up estará oculto inicialmente */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+    }
+    /* Estilo para el botón de cerrar */
+    .close-btn {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+    }
+	</style>
+
+		<!-- CSS here -->
+            <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+            <link rel="stylesheet" href="assets/css/flaticon.css">
+            <link rel="stylesheet" href="assets/css/slicknav.css">
+            <link rel="stylesheet" href="assets/css/animate.min.css">
+            <link rel="stylesheet" href="assets/css/magnific-popup.css">
+            <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+            <link rel="stylesheet" href="assets/css/themify-icons.css">
+            <link rel="stylesheet" href="assets/css/slick.css">
+            <link rel="stylesheet" href="assets/css/nice-select.css">
+            <link rel="stylesheet" href="assets/css/style.css">
+
+
+            <link href="assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+            <link href="assets/img/favicon.ico" rel="icon" sizes="60x60" type="image/png">
+            <link href="assets/img/favicon.ico" rel="icon" sizes="60x60" type="image/png">
+            <link href="assets/img/favicon.ico" rel="apple-touch-icon">
+   </head>
+
+   <body>
+       
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/favicon.ico" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+
+    <header>
+        <!-- Header Start -->
+       <div class="header-area">
+            <div class="main-header ">
+                <div class="header-top top-bg d-none d-lg-block">
+                   <div class="container-fluid">
+                       <div class="col-xl-12">
+                            <div class="row d-flex justify-content-between align-items-center">
+                                <div class="header-info-left">
+                                    <ul>     
+                                        <li><i class="fas fa-map-marker-alt"></i>Juan Max Boettner 1278</li>
+                                        <li><i class="fas fa-envelope"></i>recepcion@gvasa.com</li>
+                                    </ul>
+                                </div>
+                                <div class="header-info-right">
+                                    <ul class="header-social">    
+                                        <li><a href="https://www.linkedin.com/company/ganadera-vista-alegre-s.a./about/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="https://wa.me/595983673627" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                       </div>
+                   </div>
+                </div>
+               <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-2 col-lg-1 col-md-1">
+                                <div class="logo">
+                                  <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-8 col-lg-8 col-md-8">
+                                <!-- Main-menu -->
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav> 
+                                        <ul id="navigation">                                                                                                                                     
+                                            <li><a href="index.html">Inicio</a></li>
+                                            <li><a href="#nosotros">Nosotros</a></li>
+                                            <li><a href="#">Negocios</a>
+                                                <ul class="submenu">
+                                                    <li><a href="#negocio">Agricultura</a></li>
+                                                    <li><a href="#negocio">Ganadería</a></li>
+                                                    <li><a href="#negocio">Forestal</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#contacto">Contactos</a></li>
+                                            
+
+
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>             
+                            <div class="col-xl-2 col-lg-3 col-md-3">
+                                <div class="header-right-btn f-right d-none d-lg-block">
+                                    <a href="#doc" class="btn header-btn">Doc. público</a>
+                                </div>
+                            </div>
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+       </div>
+        <!-- Header End -->
+    </header>
+
+    <main>
+
+        <!-- slider Area Start-->
+        <div class="slider-area ">
+            <!-- Mobile Menu -->
+            <div class="slider-active">
+                <div class="single-slider slider-height d-flex align-items-center" data-background="assets/img/hero/h1_hero.jpg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-8">
+                                <div class="hero__caption">
+                                    <p data-animation="fadeInLeft" data-delay=".4s" ><span style="background-color: white; padding: 2px;">Ganadera Vista Alegre S.A.</span></p>
+                                    <h1 data-animation="fadeInLeft" data-delay=".6s" style="text-shadow: 1px 1px 2px rgb(255, 255, 255);">Impulsando la transformación del campo</h1>
+                                    <!-- Hero-btn -->
+                                    <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s">
+                                        <a href="#negocio" class="btn hero-btn">Negocios</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- slider Area End-->
+
+        <!-- Team-profile Start -->
+        <div class="team-profile team-padding" id="nosotros">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single-profile mb-30">
+                            <!-- Back -->
+                            <div class="single-profile-back-last">
+                                <h2>Quienes Somos</h2>
+                                <p>Somos una empresa familiar paraguaya fundada en 1972, dedicada a la producción agrícola, ganadera y forestal. Desde nuestros inicios, nos hemos comprometido con la producción responsable  y de alta calidad, utilizando prácticas adecuadas con el medio ambiente.
+                                    <br>
+                                    A lo largo de más de 50 años, nos hemos consolidado como una empresa pionera en la zona norte del país. Nos enorgullece nuestro legado de calidad y sostenibilidad, y estamos comprometidos con continuar produciendo productos de excelencia y respetando el medio ambiente
+                                    .</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single-profile mb-30">
+                            <!-- Front -->
+                            <div class="single-profile-front">
+                                <div class="profile-img">
+                                    <img src="assets/img/team/team_1.jpg" alt="">
+                                </div>
+                                <div class="profile-caption">
+                                    <h4><a href="#">Misión</a></h4>
+                                    <p>Nuestro patrimonio intangible, que incluye nuestra cultura, valores, conocimientos y reputación, es un activo fundamental para la empresa. Es la base sobre la que construimos nuestro éxito y nos permite generar oportunidades para nosotros y para nuestros colaboradores y vecinos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single-profile mb-30">
+                            <!-- Front -->
+                            <div class="single-profile-front">
+                                <div class="profile-img">
+                                    <img src="assets/img/team/team_2.jpg" alt="">
+                                </div>
+                                <div class="profile-caption">
+                                    <h4><a href="#">Visión</a></h4>
+                                    <p>Creemos en el crecimiento responsable. Asumimos riesgos controlados para explorar nuevas oportunidades de negocio que sean rentables y sostenibles.
+                                        <br>
+                                        Nuestro objetivo es convertirnos en una empresa líder que contribuya a mejorar la imagen de la actividad agrícola, ganadera y forestal. Para ello, promovemos modelos de producción sostenibles a largo plazo que minimicen el impacto ambiental y social.
+                                        </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Team-profile End-->
+
+        <!-- We Trusted Start-->
+        <div class="we-trusted-area trusted-padding">
+            <div class="container">
+                <div class="row d-flex align-items-end">
+                    <div class="col-xl-7 col-lg-7">
+                        <div class="trusted-img">
+                            <img src="assets/img/team/wetrusted.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-5">
+                        <div class="trusted-caption">
+                           <h2>Nuestros principales objetivos</h2>
+                           <p>La aplicación de un sistema de gestión que permita un negocio forestal en el largo plazo,
+                            económicamente viable, ambientalmente responsable y socialmente aceptable, adhiriendo a los
+                            Principios y Criterios del Forest Stewardship Council® (Consejo de Administración Forestal), con el que
+                            estamos certificados bajo el Nº de Licencia (FSC® - C167967).
+                            </p>
+                            <a onclick="togglePopup()" class="btn trusted-btn" style="color: #ffffff;">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Contenedor del pop-up -->
+<div id="popup" class="popup-container">
+    <span class="close-btn" onclick="togglePopup()">X</span>
+	    <div class="slider-area ">
+        <!-- Mobile Menu -->
+        <div class="single-slider slider-height2 d-flex align-items-center" data-background="assets/img/hero/contact_hero.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Nuestros principales objetivos</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>La aplicación de un sistema de gestión que permita un negocio forestal en el largo plazo, económicamente viable, ambientalmente responsable y socialmente aceptable, adhiriendo a los Principios y Criterios del Forest Stewardship Council® (Consejo de Administración Forestal), con el que estamos certificados bajo el Nº de Licencia (FSC® - C167967).
+        <br>
+        Satisfacer necesidades de los consumidores y mejorar el nivel de vida de nuestros clientes, así como,
+generar emprendimientos en diversos sectores económicos en el país, comprometidos en la creación
+de valor para los accionistas, los clientes, las personas que trabajan en la compañía.
+    </p>
+</div>
+        <!-- We Trusted End-->
+
+        <!-- services Area Start-->
+        <div class="services-area section-padding2">
+            <div class="container">
+                <!-- section tittle -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-tittle text-center">
+                            <h2>Trayectoria, pasión y resultados.</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-icon">
+                                <span class="flaticon-audit"></span>
+                            </div>
+                            <div class="services-caption">
+                                <h4>Más de 50 años de experiencia </h4>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-icon">
+                                <span class="flaticon-checklist"></span>
+                            </div>
+                            <div class="services-caption">
+                                <h4>Más de 8 unidades productivas </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-icon">
+                                <span class="flaticon-checklist-1"></span>
+                            </div>
+                            <div class="services-caption">
+                                <h4>Más de 200 colaboradores activos</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- services Area End-->
+
+        <div class="slider-area ">
+            <!-- Mobile Menu -->
+            <div class="single-slider slider-height2 d-flex align-items-center" data-background="assets/img/hero/equipo.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap text-center">
+                                <h2>Vista Alegre S.A.</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Completed Cases Start -->
+        <div class="completed-cases section-padding3">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- slider Heading -->
+                    <div class="col-xl-4 col-lg-4 col-md-8">
+                        <div class="single-cases-info mb-30">
+                            <h3>Construimos un futuro mejor </h3>
+                            <p>
+                                Los conocimientos y la experiencia de nuestros colaboradores son nuestro mayor activo. Gracias a su talento y dedicación, podemos generar oportunidades no solo para nosotros, sino también para nuestras comunidades.
+                                <br>
+                                Invertimos en la formación y el desarrollo de nuestro equipo, porque sabemos que su crecimiento es nuestro crecimiento. Somos una empresa que apuesta por el bienestar de sus colaboradores.
+                            </p>
+                            
+                        </div>
+                    </div>
+                    <!-- OwL -->
+                    <div class="col-xl-8 col-lg-8 col-md-col-md-7">
+                        <div class=" completed-active owl-carousel"> 
+                            <div class="single-cases-img">
+                                <img src="assets/img/service/completed_case_4.png" alt="">
+                                <!-- img hover caption -->
+
+                            </div>
+                            <div class="single-cases-img">
+                                <img src="assets/img/service/completed_case_5.png" alt="">
+                                <!-- img hover caption -->
+
+                            </div>
+                            <div class="single-cases-img">
+                                <img src="assets/img/service/completed_case_6.png" alt="">
+                                <!-- img hover caption -->
+
+                            </div>
+                            <div class="single-cases-img">
+                                <img src="assets/img/service/completed_case_1.png" alt="">
+                                <!-- img hover caption -->
+
+                            </div>
+                            <div class="single-cases-img">
+                                <img src="assets/img/service/completed_case_2.png" alt="">
+                                <!-- img hover caption -->
+ 
+                            </div>
+                            <div class="single-cases-img">
+                                <img src="assets/img/service/completed_case_3.png" alt="">
+                                <!-- img hover caption -->
+ 
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Completed Cases end -->
+
+        
+        <!-- Recent Area Start -->
+        <div class="recent-area section-paddingt" id="negocio">
+            <div class="container">
+                <!-- section tittle -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-tittle text-center">
+                            <h2>Negocios</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single-recent-cap mb-30">
+                            <div class="recent-img">
+                                <img src="assets/img/recent/rcent_1.png" alt="">
+                            </div>
+                            <div class="recent-cap">
+                                
+                                <h4><a href="single-blog.html">Ganaderia</a></h4>
+                                <span>Más de 50 años de experiencia en el sector de la producción de ganado bovino. A lo largo de nuestra trayectoria, hemos cultivado una profunda pasión por la ganadería, que nos ha llevado a convertirnos en referentes en la integración constante de sistemas, buscando siempre el equilibrio productivo.
+                                </span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single-recent-cap mb-30">
+                            <div class="recent-img">
+                                <img src="assets/img/recent/rcent_2.png" alt="">
+                            </div>
+                            <div class="recent-cap">
+                                
+                                <h4><a href="single-blog.html">Agricultura</a></h4>
+                                <span>Nuestras unidades productivas, ubicadas en diferentes zonas del norte de la Región Oriental, se especializan en el cultivo de arroz, soja y maíz. Implementamos un sistema de labranza cero, que minimiza el impacto ambiental y mejora la salud del suelo.
+                                    Nuestra visión es convertirnos en un referente de la agricultura sostenible en Paraguay, contribuyendo al desarrollo económico y social del país.
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single-recent-cap mb-30">
+                            <div class="recent-img">
+                                <img src="assets/img/recent/rcent_3.png" alt="">
+                            </div>
+                            <div class="recent-cap">
+                                
+                                <h4><a href="single-blog.html">Forestal</a></h4>
+                                <span>Con 19 años de experiencia se ha consolidado su posición como un actor fundamental en el desarrollo forestal del norte de la Región creemos que el sector forestal tiene un enorme potencial para contribuir al desarrollo sostenible de la región. Por eso, estamos comprometidos con la promoción de prácticas forestales responsables y con la generación de nuevas oportunidades
+                                    Contamos con unidades productivas de Eucalipto, Pino y Teca, todas ellas certificadas, esto significa que nuestros bosques se manejan de manera responsable, protegiendo la biodiversidad y promoviendo prácticas sociales y ambientales justas.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <section class="sample-text-area" id="doc">
+                <div class="container box_1170" >
+                    <h3 class="text-heading">Documentos Públicos</h3>
+                    <p class="sample-text">
+                        Resumen Público del Plan de Manejo Forestal - Resumen Publico de Plan de Monitoreo
+                    </p>
+                    
+                    <div class="button-group-area">
+                        
+                        <a href="assets/pdf/DI-03-GVASA-Resumen Publico Plan de Monitorio.pdf" class="btn header-btn" target="_blank">Plan de Monitoreo</a>
+                        
+                        
+                        <a href="assets/pdf/DI-02-GVASA-MF-Resumen Plan de Manejo FSC V2.pdf" class="btn header-btn" target="_blank">PLAN DE MANEJO FORESTAL</a>
+                       
+                    </div>
+                    
+                </div>
+
+
+
+
+                
+
+
+            </section>
+
+            
+            <div class="container box_1170">
+                <div class="section-top-border">
+                    <h3>Galería</h3>
+                    <div class="row gallery-item">
+                        <div class="col-md-4">
+                            <a href="assets/img/elements/g1.jpg" class="img-pop-up">
+                                <div class="single-gallery-image" style="background: url(assets/img/elements/g1.jpg);"></div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="assets/img/elements/g2.jpg" class="img-pop-up">
+                                <div class="single-gallery-image" style="background: url(assets/img/elements/g2.jpg);"></div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="assets/img/elements/g3.jpg" class="img-pop-up">
+                                <div class="single-gallery-image" style="background: url(assets/img/elements/g3.jpg);"></div>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="assets/img/elements/g4.jpg" class="img-pop-up">
+                                <div class="single-gallery-image" style="background: url(assets/img/elements/g4.jpg);"></div>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="assets/img/elements/g5.jpg" class="img-pop-up">
+                                <div class="single-gallery-image" style="background: url(assets/img/elements/g5.jpg);"></div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="assets/img/elements/g6.jpg" class="img-pop-up">
+                                <div class="single-gallery-image" style="background: url(assets/img/elements/g6.jpg);"></div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="assets/img/elements/g7.jpg" class="img-pop-up">
+                                <div class="single-gallery-image" style="background: url(assets/img/elements/g7.jpg);"></div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="assets/img/elements/g8.jpg" class="img-pop-up">
+                                <div class="single-gallery-image" style="background: url(assets/img/elements/g8.jpg);"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+            
+        </div>
+        <!-- Recent Area End-->
+        <div class="whole-wrap">
+         
+
+
+        <!-- Request Back Start -->
+        <div class="request-back-area section-padding30" id="contacto">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-4 col-lg-5 col-md-5">
+                        <div class="request-content">
+                            <h3>CONTACTO</h3>
+                            <p>Con mucho gusto informamos acerca de nuestro trabajo.</p>
+                            <div class="media contact-info">
+                                <span class="contact-info__icon"><i class="ti-home"></i></span>
+                                <div class="media-body">
+                                    <p style="color: #ffffff;">Juan Max Boettner 1278, Asuncion, Paraguay </p>
+                                </div>
+                            </div>
+                            <div class="media contact-info">
+                                <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+                                <div class="media-body">
+                                    <p style="color: #ffffff;">+595 983 673 627</p>
+                                </div>
+                            </div>
+                            <div class="media contact-info">
+                                <span class="contact-info__icon"><i class="ti-email"></i></span>
+                                <div class="media-body">
+                                    <p style="color: #ffffff;">recepcion@gvasa.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 col-lg-7 col-md-7">
+                        <!-- Contact form Start -->
+                        <div class="form-wrapper">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.7245666464055!2d-57.5644754!3d-25.279849300000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da602d412f8c3%3A0xe16fa9593673fe0f!2sJuan%20Max%20Boettner%201278%2C%20Asunci%C3%B3n%20001527!5e0!3m2!1ses-419!2spy!4v1713189137467!5m2!1ses-419!2spy" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>     <!-- Contact form End -->
+                </div>
+            </div>
+        </div>
+        <!-- Request Back End -->
+
+        
+
+    </main>
+   <footer>
+       <!-- Footer Start-->
+       <div class="footer-area footer-padding">
+           <div class="container">
+               <div class="row d-flex justify-content-between">
+                   <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                      <div class="single-footer-caption mb-50">
+                        <div class="single-footer-caption mb-30">
+                             <!-- logo -->
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                            </div>
+                            <div class="footer-tittle">
+                                <div class="footer-pera">
+                                    <p>Impulsando la transformación del campo.</p>
+                               </div>
+                            </div>
+                            <!-- social -->
+                            <div class="footer-social">
+                                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                                <a href="https://www.linkedin.com/company/ganadera-vista-alegre-s.a./about/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://wa.me/595983673627" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                      </div>
+                   </div>
+                   <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
+                       <div class="single-footer-caption mb-50">
+                           <div class="footer-tittle">
+                               <h4>Apartados</h4>
+                               <ul>
+                                   <li><a href="index.html">Inicio</a></li>
+                                   <li><a href="about.html">Nosotros</a></li>
+                                   <li><a href="single-blog.html">Negocios</a></li>
+                                   <li><a href="#">Contactos</a></li>
+                                   <li><a href="contact.html">  Alianzas</a></li>
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
+                       <div class="single-footer-caption mb-50">
+                           <div class="footer-tittle">
+                               <h4>Negocios</h4>
+                               <ul>
+                                   <li><a href="#">Agricultura</a></li>
+                                   <li><a href="#">Ganaderia</a></li>
+                                   <li><a href="#">Forestal</a></li>
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                       <div class="single-footer-caption mb-50">
+                           <div class="footer-tittle">
+                               <h4>Contactos</h4>
+                               <ul>
+                                <li><a href="tel:595983673627">+595 983 673 627</a></li>
+                                <li><a href="mailto:recepcion@gvasa.com">recepcion@gvasa.com</a></li>
+                                <li><a href="#">Juan Max Boettner 1278 Asuncion 021-612-399
+                                </a></li>
+                            </ul>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <!-- footer-bottom aera -->
+       <div class="footer-bottom-area footer-bg">
+           <div class="container">
+               <div class="footer-border">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-xl-12 ">
+                            <div class="footer-copy-right text-center">
+                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Vista Alegre S.A. &copy;<script>document.write(new Date().getFullYear());</script>  Todos los derechos reservados | by <a href="https://www.computersservices.com.py/" target="_blank">Computers Services</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+           </div>
+       </div>
+       <!-- Footer End-->
+   </footer>
+   
+	<!-- JS here -->
+	
+		<!-- All JS Custom Plugins Link Here here -->
+        <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+		<!-- Jquery, Popper, Bootstrap -->
+		<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="./assets/js/popper.min.js"></script>
+        <script src="./assets/js/bootstrap.min.js"></script>
+	    <!-- Jquery Mobile Menu -->
+        <script src="./assets/js/jquery.slicknav.min.js"></script>
+
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="./assets/js/owl.carousel.min.js"></script>
+        <script src="./assets/js/slick.min.js"></script>
+        <!-- Date Picker -->
+        <script src="./assets/js/gijgo.min.js"></script>
+		<!-- One Page, Animated-HeadLin -->
+        <script src="./assets/js/wow.min.js"></script>
+		<script src="./assets/js/animated.headline.js"></script>
+        <script src="./assets/js/jquery.magnific-popup.js"></script>
+
+		<!-- Scrollup, nice-select, sticky -->
+        <script src="./assets/js/jquery.scrollUp.min.js"></script>
+        <script src="./assets/js/jquery.nice-select.min.js"></script>
+		<script src="./assets/js/jquery.sticky.js"></script>
+        
+        <!-- contact js -->
+        <script src="./assets/js/contact.js"></script>
+        <script src="./assets/js/jquery.form.js"></script>
+        <script src="./assets/js/jquery.validate.min.js"></script>
+        <script src="./assets/js/mail-script.js"></script>
+        <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+        
+		<!-- Jquery Plugins, main Jquery -->	
+        <script src="./assets/js/plugins.js"></script>
+        <script src="./assets/js/main.js"></script>
+
+        <script>
+            // Función para mostrar u ocultar el pop-up
+            function togglePopup() {
+                var popup = document.getElementById("popup");
+                if (popup.style.display === "none") {
+                    popup.style.display = "block";
+                } else {
+                    popup.style.display = "none";
+                }
+            }
+        </script>
+
+<script>
+    // Función para mostrar u ocultar el pop-up
+    function togglePopup() {
+        var popup = document.getElementById("popup");
+        if (popup.style.display === "none") {
+            popup.style.display = "block";
+        } else {
+            popup.style.display = "none";
+        }
+    }
+</script>
+        
+    </body>
+</html>

@@ -25,6 +25,31 @@
    <link rel="stylesheet" href="assets/css/nice-select.css">
    <link rel="stylesheet" href="assets/css/style.css">
    <link rel="stylesheet" href="assets/css/responsive.css">
+
+
+   <style>
+    /* Estilo para el contenedor del pop-up */
+    .popup-container {
+        display: none; /* El pop-up estará oculto inicialmente */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+    }
+    /* Estilo para el botón de cerrar */
+    .close-btn {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+    }
+	</style>
+
 </head>
 
 <body>
@@ -135,6 +160,30 @@
         </div>
     </div>
     <!-- slider Area End-->
+
+	<!-- Botón que activa el pop-up -->
+<button onclick="togglePopup()">Mostrar Pop-up</button>
+
+<!-- Contenedor del pop-up -->
+<div id="popup" class="popup-container">
+    <span class="close-btn" onclick="togglePopup()">X</span>
+    <h2>¡Hola! Este es un pop-up simple.</h2>
+	<div class="slider-area ">
+        <!-- Mobile Menu -->
+        <div class="single-slider slider-height2 d-flex align-items-center" data-background="assets/img/hero/contact_hero.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Our Element</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>Puedes poner cualquier contenido aquí.</p>
+</div>
 
 	<!-- Start Sample Area -->
 	<section class="sample-text-area">
@@ -912,6 +961,20 @@
 		<!-- Jquery Plugins, main Jquery -->	
         <script src="./assets/js/plugins.js"></script>
         <script src="./assets/js/main.js"></script>
+
+
+
+		<script>
+			// Función para mostrar u ocultar el pop-up
+			function togglePopup() {
+				var popup = document.getElementById("popup");
+				if (popup.style.display === "none") {
+					popup.style.display = "block";
+				} else {
+					popup.style.display = "none";
+				}
+			}
+		</script>
         
 </body>
 </html>

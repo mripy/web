@@ -27,6 +27,30 @@ $(document).ready(function(){
 });
 </script>
 
+
+<style>
+    /* Estilo para el contenedor del pop-up */
+    .popup-container {
+        display: none; /* El pop-up estará oculto inicialmente */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+    }
+    /* Estilo para el botón de cerrar */
+    .close-btn {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+    }
+	</style>
+
 		<!-- CSS here -->
             <link rel="stylesheet" href="assets/css/bootstrap.min.css">
             <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
@@ -39,6 +63,12 @@ $(document).ready(function(){
             <link rel="stylesheet" href="assets/css/slick.css">
             <link rel="stylesheet" href="assets/css/nice-select.css">
             <link rel="stylesheet" href="assets/css/style.css">
+
+
+            <link href="assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+            <link href="assets/img/favicon.ico" rel="icon" sizes="60x60" type="image/png">
+            <link href="assets/img/favicon.ico" rel="icon" sizes="60x60" type="image/png">
+            <link href="assets/img/favicon.ico" rel="apple-touch-icon">
    </head>
 
    <body>
@@ -49,7 +79,7 @@ $(document).ready(function(){
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/logo.png" alt="">
+                    <img src="assets/img/favicon.ico" alt="">
                 </div>
             </div>
         </div>
@@ -72,9 +102,9 @@ $(document).ready(function(){
                                 </div>
                                 <div class="header-info-right">
                                     <ul class="header-social">    
-                                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/company/ganadera-vista-alegre-s.a./about/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
                                         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+                                        <li><a href="https://wa.me/595983673627" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -228,13 +258,38 @@ $(document).ready(function(){
                             Principios y Criterios del Forest Stewardship Council® (Consejo de Administración Forestal), con el que
                             estamos certificados bajo el Nº de Licencia (FSC® - C167967).
                             </p>
-                            <a href="#" class="btn trusted-btn">Leer más</a>
+                            <a onclick="togglePopup()" class="btn trusted-btn" style="color: #ffffff;">Leer más</a>
                         </div>
                     </div>
                 </div>
             </div>
             
         </div>
+
+        <!-- Contenedor del pop-up -->
+<div id="popup" class="popup-container">
+    <span class="close-btn" onclick="togglePopup()">X</span>
+	    <div class="slider-area ">
+        <!-- Mobile Menu -->
+        <div class="single-slider slider-height2 d-flex align-items-center" data-background="assets/img/hero/contact_hero.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Nuestros principales objetivos</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>La aplicación de un sistema de gestión que permita un negocio forestal en el largo plazo, económicamente viable, ambientalmente responsable y socialmente aceptable, adhiriendo a los Principios y Criterios del Forest Stewardship Council® (Consejo de Administración Forestal), con el que estamos certificados bajo el Nº de Licencia (FSC® - C167967).
+        <br>
+        Satisfacer necesidades de los consumidores y mejorar el nivel de vida de nuestros clientes, así como,
+generar emprendimientos en diversos sectores económicos en el país, comprometidos en la creación
+de valor para los accionistas, los clientes, las personas que trabajan en la compañía.
+    </p>
+</div>
         <!-- We Trusted End-->
 
         <!-- services Area Start-->
@@ -284,6 +339,22 @@ $(document).ready(function(){
             </div>
         </div>
         <!-- services Area End-->
+
+        <div class="slider-area ">
+            <!-- Mobile Menu -->
+            <div class="single-slider slider-height2 d-flex align-items-center" data-background="assets/img/hero/equipo.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap text-center">
+                                <h2>Vista Alegre S.A.</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Completed Cases Start -->
         <div class="completed-cases section-padding3">
             <div class="container-fluid">
@@ -304,12 +375,32 @@ $(document).ready(function(){
                     <div class="col-xl-8 col-lg-8 col-md-col-md-7">
                         <div class=" completed-active owl-carousel"> 
                             <div class="single-cases-img">
+                                <img src="assets/img/service/completed_case_4.png" alt="">
+                                <!-- img hover caption -->
+
+                            </div>
+                            <div class="single-cases-img">
+                                <img src="assets/img/service/completed_case_5.png" alt="">
+                                <!-- img hover caption -->
+
+                            </div>
+                            <div class="single-cases-img">
+                                <img src="assets/img/service/completed_case_6.png" alt="">
+                                <!-- img hover caption -->
+
+                            </div>
+                            <div class="single-cases-img">
                                 <img src="assets/img/service/completed_case_1.png" alt="">
                                 <!-- img hover caption -->
 
                             </div>
                             <div class="single-cases-img">
                                 <img src="assets/img/service/completed_case_2.png" alt="">
+                                <!-- img hover caption -->
+ 
+                            </div>
+                            <div class="single-cases-img">
+                                <img src="assets/img/service/completed_case_3.png" alt="">
                                 <!-- img hover caption -->
  
                             </div>
@@ -398,13 +489,69 @@ $(document).ready(function(){
                     
                 </div>
 
+
+
+
                 
 
+
             </section>
+
+            
+            <div class="container box_1170">
+                <div class="section-top-border">
+                    <h3>Galería</h3>
+                    <div class="row gallery-item">
+                        <div class="col-md-4">
+                            <a href="assets/img/elements/g1.jpg" class="img-pop-up">
+                                <div class="single-gallery-image" style="background: url(assets/img/elements/g1.jpg);"></div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="assets/img/elements/g2.jpg" class="img-pop-up">
+                                <div class="single-gallery-image" style="background: url(assets/img/elements/g2.jpg);"></div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="assets/img/elements/g3.jpg" class="img-pop-up">
+                                <div class="single-gallery-image" style="background: url(assets/img/elements/g3.jpg);"></div>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="assets/img/elements/g4.jpg" class="img-pop-up">
+                                <div class="single-gallery-image" style="background: url(assets/img/elements/g4.jpg);"></div>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="assets/img/elements/g5.jpg" class="img-pop-up">
+                                <div class="single-gallery-image" style="background: url(assets/img/elements/g5.jpg);"></div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="assets/img/elements/g6.jpg" class="img-pop-up">
+                                <div class="single-gallery-image" style="background: url(assets/img/elements/g6.jpg);"></div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="assets/img/elements/g7.jpg" class="img-pop-up">
+                                <div class="single-gallery-image" style="background: url(assets/img/elements/g7.jpg);"></div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="assets/img/elements/g8.jpg" class="img-pop-up">
+                                <div class="single-gallery-image" style="background: url(assets/img/elements/g8.jpg);"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
             
         </div>
         <!-- Recent Area End-->
-
+        <div class="whole-wrap">
+         
 
 
         <!-- Request Back Start -->
@@ -469,8 +616,8 @@ $(document).ready(function(){
                             <!-- social -->
                             <div class="footer-social">
                                 <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                                <a href="https://www.linkedin.com/company/ganadera-vista-alegre-s.a./about/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://wa.me/595983673627" target="_blank"><i class="fab fa-whatsapp"></i></a>
                             </div>
                         </div>
                       </div>
@@ -506,8 +653,8 @@ $(document).ready(function(){
                            <div class="footer-tittle">
                                <h4>Contactos</h4>
                                <ul>
-                                <li><a href="#">+595 983 673 627</a></li>
-                                <li><a href="#">recepcion@gvasa.com</a></li>
+                                <li><a href="tel:595983673627">+595 983 673 627</a></li>
+                                <li><a href="mailto:recepcion@gvasa.com">recepcion@gvasa.com</a></li>
                                 <li><a href="#">Juan Max Boettner 1278 Asuncion 021-612-399
                                 </a></li>
                             </ul>
@@ -572,6 +719,30 @@ $(document).ready(function(){
 		<!-- Jquery Plugins, main Jquery -->	
         <script src="./assets/js/plugins.js"></script>
         <script src="./assets/js/main.js"></script>
+
+        <script>
+            // Función para mostrar u ocultar el pop-up
+            function togglePopup() {
+                var popup = document.getElementById("popup");
+                if (popup.style.display === "none") {
+                    popup.style.display = "block";
+                } else {
+                    popup.style.display = "none";
+                }
+            }
+        </script>
+
+<script>
+    // Función para mostrar u ocultar el pop-up
+    function togglePopup() {
+        var popup = document.getElementById("popup");
+        if (popup.style.display === "none") {
+            popup.style.display = "block";
+        } else {
+            popup.style.display = "none";
+        }
+    }
+</script>
         
     </body>
 </html>

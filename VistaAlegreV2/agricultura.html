@@ -1,0 +1,384 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Agricultura - Vista Alegre S.A. </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Agregar efecto de desplazamiento suave a todos los enlaces
+  $('a[href^="#"]').on('click', function(event) {
+    var target = $(this.getAttribute('href'));
+    if (target.length) {
+      event.preventDefault();
+      $('html, body').stop().animate({
+        scrollTop: target.offset().top
+      }, 1000); // 1000 milisegundos = 1 segundo
+    }
+  });
+});
+</script>
+
+
+<style>
+    /* Estilo para el contenedor del pop-up */
+    .popup-container {
+        display: none; /* El pop-up estará oculto inicialmente */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+    }
+    /* Estilo para el botón de cerrar */
+    .close-btn {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+    }
+	</style>
+
+		<!-- CSS here -->
+            <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+            <link rel="stylesheet" href="assets/css/flaticon.css">
+            <link rel="stylesheet" href="assets/css/slicknav.css">
+            <link rel="stylesheet" href="assets/css/animate.min.css">
+            <link rel="stylesheet" href="assets/css/magnific-popup.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+            <link rel="stylesheet" href="assets/css/themify-icons.css">
+            <link rel="stylesheet" href="assets/css/slick.css">
+            <link rel="stylesheet" href="assets/css/nice-select.css">
+            <link rel="stylesheet" href="assets/css/style.css">
+
+
+            <link href="assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+            <link href="assets/img/favicon.ico" rel="icon" sizes="60x60" type="image/png">
+            <link href="assets/img/favicon.ico" rel="icon" sizes="60x60" type="image/png">
+            <link href="assets/img/favicon.ico" rel="apple-touch-icon">
+   </head>
+
+   <body>
+       
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/favicon.ico" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+
+    <header>
+        <!-- Header Start -->
+       <div class="header-area">
+            <div class="main-header ">
+                <div class="header-top top-bg d-none d-lg-block">
+                   <div class="container-fluid">
+                       <div class="col-xl-12">
+                            <div class="row d-flex justify-content-between align-items-center">
+                                <div class="header-info-left">
+                                    <ul>     
+                                        <li><i class="fas fa-map-marker-alt"></i>Juan Max Boettner 1278</li>
+                                        <li><i class="fas fa-envelope"></i>recepcion@gvasa.com</li>
+                                    </ul>
+                                </div>
+                                <div class="header-info-right">
+                                    <ul class="header-social">    
+                                        <li><a href="https://www.linkedin.com/company/ganadera-vista-alegre-s.a./about/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="https://wa.me/595983673627" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                       </div>
+                   </div>
+                </div>
+               <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-2 col-lg-1 col-md-1">
+                                <div class="logo">
+                                  <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-8 col-lg-8 col-md-8">
+                                <!-- Main-menu -->
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav> 
+                                        <ul id="navigation">                                                                                                                                     
+                                            <li><a href="index.html">Inicio</a></li>
+                                            <li><a href="index.html#nosotros">Nosotros</a></li>
+                                            <li><a href="index.html#negocio">Negocios</a>
+                                                <ul class="submenu">
+                                                    <li><a href="agricultura.html">Agricultura</a></li>
+                                                    <li><a href="ganaderia.html">Ganadería</a></li>
+                                                    <li><a href="forestal.html">Forestal</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="index.html#contacto">Contactos</a></li>
+                                            
+
+
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>             
+                            <div class="col-xl-2 col-lg-3 col-md-3">
+                                <div class="header-right-btn f-right d-none d-lg-block">
+                                    <a href="index.html#doc" class="btn header-btn">Doc. público</a>
+                                </div>
+                            </div>
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+       </div>
+        <!-- Header End -->
+    </header>
+
+    <main>
+
+        <!-- slider Area Start-->
+        <div class="slider-area ">
+            <!-- Mobile Menu -->
+            <div class="single-slider slider-height2 d-flex align-items-center" data-background="assets/img/hero/services_hero.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap text-center">
+                                <h2><i class="fas fa-tractor"></i> Agricultura</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider Area End-->
+
+        
+
+        <!-- services Area Start-->
+        <div >
+            <div class="container">
+                <!-- section tittle -->
+                <div class="row">
+                    
+                    <div class="col-lg-12">
+                        <br>
+                        <p style="text-align: justify;">Vista Alegre se destaca por su eficiente producción agrícola en tres establecimientos productivos, donde cultivan arroz, maíz y soja. Sus operaciones se caracterizan por un enfoque metódico y sostenible, garantizando la calidad y el cuidado del medio ambiente.
+                            <br>
+                            La clave del éxito de Vista Alegre reside en su planificación anual, donde se analizan las necesidades específicas de cada ambiente y cultivo. Esto permite optimizar el uso de recursos y maximizar la productividad.
+                            <br>
+                            Cuenta con un equipo de colaboradores altamente capacitados en el área agrícola. Su conocimiento y habilidades les permiten realizar un seguimiento detallado de las actividades y garantizar la aplicación de buenas prácticas agrícolas.
+                        </p>
+                        <div class="section-tittle text-center">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="testimonial-icon mb-45">
+                                <img src="assets/img/logo/testimonial.png" class="ani-btn " alt="">
+                                <h4>Laguna Yovai</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="testimonial-icon mb-45">
+                                <img src="assets/img/logo/testimonial.png" class="ani-btn " alt="">
+                                <h4>Margarita</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="testimonial-icon mb-45">
+                                <img src="assets/img/logo/testimonial.png" class="ani-btn " alt="">
+                                <h4>Maria Elena</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- services Area End-->
+
+        
+
+    </main>
+   <footer>
+       <!-- Footer Start-->
+       <div class="footer-area footer-padding">
+           <div class="container">
+               <div class="row d-flex justify-content-between">
+                   <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                      <div class="single-footer-caption mb-50">
+                        <div class="single-footer-caption mb-30">
+                             <!-- logo -->
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                            </div>
+                            <div class="footer-tittle">
+                                <div class="footer-pera">
+                                    <p>Impulsando la transformación del campo.</p>
+                               </div>
+                            </div>
+                            <!-- social -->
+                            <div class="footer-social">
+                                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                                <a href="https://www.linkedin.com/company/ganadera-vista-alegre-s.a./about/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://wa.me/595983673627" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                      </div>
+                   </div>
+                   <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
+                       <div class="single-footer-caption mb-50">
+                           <div class="footer-tittle">
+                               <h4>Apartados</h4>
+                               <ul>
+                                   <li><a href="index.html">Inicio</a></li>
+                                   <li><a href="index.html#nosotros">Nosotros</a></li>
+                                   <li><a href="index.html#negocio">Negocios</a></li>
+                                   <li><a href="index.html#contacto">Contactos</a></li>
+                                   
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
+                       <div class="single-footer-caption mb-50">
+                           <div class="footer-tittle">
+                               <h4>Negocios</h4>
+                               <ul>
+                                   <li><a href="agricultura.html">Agricultura</a></li>
+                                   <li><a href="ganaderia.html">Ganaderia</a></li>
+                                   <li><a href="forestal.html">Forestal</a></li>
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                       <div class="single-footer-caption mb-50">
+                           <div class="footer-tittle">
+                               <h4>Contactos</h4>
+                               <ul>
+                                <li><a href="tel:595983673627">+595 983 673 627</a></li>
+                                <li><a href="mailto:recepcion@gvasa.com">recepcion@gvasa.com</a></li>
+                                <li><a href="#">Juan Max Boettner 1278 Asuncion 021-612-399
+                                </a></li>
+                            </ul>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <!-- footer-bottom aera -->
+       <div class="footer-bottom-area footer-bg">
+           <div class="container">
+               <div class="footer-border">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-xl-12 ">
+                            <div class="footer-copy-right text-center">
+                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Vista Alegre S.A. &copy;<script>document.write(new Date().getFullYear());</script>  Todos los derechos reservados | by <a href="https://www.computersservices.com.py/" target="_blank">Computers Services</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+           </div>
+       </div>
+       <!-- Footer End-->
+   </footer>
+   
+	<!-- JS here -->
+	
+		<!-- All JS Custom Plugins Link Here here -->
+        <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+		<!-- Jquery, Popper, Bootstrap -->
+		<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="./assets/js/popper.min.js"></script>
+        <script src="./assets/js/bootstrap.min.js"></script>
+	    <!-- Jquery Mobile Menu -->
+        <script src="./assets/js/jquery.slicknav.min.js"></script>
+
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="./assets/js/owl.carousel.min.js"></script>
+        <script src="./assets/js/slick.min.js"></script>
+        <!-- Date Picker -->
+        <script src="./assets/js/gijgo.min.js"></script>
+		<!-- One Page, Animated-HeadLin -->
+        <script src="./assets/js/wow.min.js"></script>
+		<script src="./assets/js/animated.headline.js"></script>
+        <script src="./assets/js/jquery.magnific-popup.js"></script>
+
+		<!-- Scrollup, nice-select, sticky -->
+        <script src="./assets/js/jquery.scrollUp.min.js"></script>
+        <script src="./assets/js/jquery.nice-select.min.js"></script>
+		<script src="./assets/js/jquery.sticky.js"></script>
+        
+        <!-- contact js -->
+        <script src="./assets/js/contact.js"></script>
+        <script src="./assets/js/jquery.form.js"></script>
+        <script src="./assets/js/jquery.validate.min.js"></script>
+        <script src="./assets/js/mail-script.js"></script>
+        <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+        
+		<!-- Jquery Plugins, main Jquery -->	
+        <script src="./assets/js/plugins.js"></script>
+        <script src="./assets/js/main.js"></script>
+
+        <script>
+            // Función para mostrar u ocultar el pop-up
+            function togglePopup() {
+                var popup = document.getElementById("popup");
+                if (popup.style.display === "none") {
+                    popup.style.display = "block";
+                } else {
+                    popup.style.display = "none";
+                }
+            }
+        </script>
+
+<script>
+    // Función para mostrar u ocultar el pop-up
+    function togglePopup() {
+        var popup = document.getElementById("popup");
+        if (popup.style.display === "none") {
+            popup.style.display = "block";
+        } else {
+            popup.style.display = "none";
+        }
+    }
+</script>
+        
+    </body>
+</html>

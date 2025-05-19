@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buscar Certificados</title>
+  <style>
+  #tablaResultados th,
+  #tablaResultados td {
+    text-transform: uppercase;
+  }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f5f9;
+      margin: 0;
+      padding: 30px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      max-width: 900px;
+      margin: auto;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+        h4 {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .search-box {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 12px 40px 12px 16px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .search-box::after {
+      content: '🔍';
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: #888;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      overflow-x: auto;
+      display: block;
+    }
+
+    table thead {
+      background-color: #f9fafb;
+    }
+
+    table th, table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    table tr:hover {
+      background-color: #f0f8ff;
+    }
+
+    a {
+      color: #0078D7;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .not-found {
+      color: red;
+      font-weight: bold;
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      table th, table td {
+        font-size: 14px;
+        padding: 8px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      .search-box input {
+        font-size: 14px;
+        padding: 10px 36px 10px 12px;
+      }
+
+      .search-box::after {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Buscar Certificados</h2>
+    <h4>Conferencia Magistral: La prueba en el proceso judicial.</h4>
+    <div class="search-box">
+      <input type="text" id="busqueda" placeholder="Buscar por nombre o CIN°">
+    </div>
+
+    <div id="resultado">
+      <table id="tablaResultados" style="display: none;">
+        <thead>
+          <tr>
+            <th>Nombre y apellido</th>
+            
+            <th>Descargar</th>
+          </tr>
+        </thead>
+        <tbody id="tablaBody"></tbody>
+      </table>
+      <div class="not-found" id="noResultados" style="display: none;">No se encontraron resultados.</div>
+    </div>
+  </div>
+
+  <script>
+    // Lista de certificados
+    const certificados = [
+        
+  {
+    "nombre": "zunilda ester mercado ",
+    "cedula": "4328416",
+    "archivo": "Certificado-2_firmado.pdf"
+  },
+  {
+    "nombre": "angela ortiz riquelme ",
+    "cedula": "5728076",
+    "archivo": "Certificado-3_firmado.pdf"
+  },
+  {
+    "nombre": "eva emilce martínez sanabria ",
+    "cedula": "5182046",
+    "archivo": "Certificado-4_firmado.pdf"
+  },
+  {
+    "nombre": "digna liliana gonzález valdez ",
+    "cedula": "5882572",
+    "archivo": "Certificado-5_firmado.pdf"
+  },
+  {
+    "nombre": "angela ortiz riquelme ",
+    "cedula": "5728076",
+    "archivo": "Certificado-6_firmado.pdf"
+  },
+  {
+    "nombre": "luis miguel duarte segovia ",
+    "cedula": "5983596",
+    "archivo": "Certificado-7_firmado.pdf"
+  },
+  {
+    "nombre": "luján maithe de jesús galeano mujica ",
+    "cedula": "5732834",
+    "archivo": "Certificado-8_firmado.pdf"
+  },
+  {
+    "nombre": "julio césar cardozo blanco ",
+    "cedula": "4917203",
+    "archivo": "Certificado-9_firmado.pdf"
+  },
+  {
+    "nombre": "gismelda gonzález cabrera ",
+    "cedula": "5703373",
+    "archivo": "Certificado-10_firmado.pdf"
+  },
+  {
+    "nombre": "alvaro damián rodríguez cáceres",
+    "cedula": "5683183",
+    "archivo": "Certificado-11_firmado.pdf"
+  },
+  {
+    "nombre": "claudina pereira martínez ",
+    "cedula": "6747234",
+    "archivo": "Certificado-12_firmado.pdf"
+  },
+  {
+    "nombre": "liz rosana cardozo linares",
+    "cedula": "6920928",
+    "archivo": "Certificado-13_firmado.pdf"
+  },
+  {
+    "nombre": "victor hugo benitez chaparro ",
+    "cedula": "2937098",
+    "archivo": "Certificado-14_firmado.pdf"
+  },
+  {
+    "nombre": "micaela dodanin britez candia ",
+    "cedula": "7878460",
+    "archivo": "Certificado-15_firmado.pdf"
+  },
+  {
+    "nombre": "rocio ramona gonzález figueredo ",
+    "cedula": "6915693",
+    "archivo": "Certificado-16_firmado.pdf"
+  },
+  {
+    "nombre": "sol maría cantero noria",
+    "cedula": "5699437",
+    "archivo": "Certificado-17_firmado.pdf"
+  },
+  {
+    "nombre": "victor hugo ruiz diaz zuárez ",
+    "cedula": "5788278",
+    "archivo": "Certificado-18_firmado.pdf"
+  },
+  {
+    "nombre": "mirian janet lópez vera ",
+    "cedula": "6291450",
+    "archivo": "Certificado-19_firmado.pdf"
+  },
+  {
+    "nombre": "luis alberto acuña correa ",
+    "cedula": "5802998",
+    "archivo": "Certificado-20_firmado.pdf"
+  },
+  {
+    "nombre": "juan tobias cuencas rodriguez ",
+    "cedula": "6566418",
+    "archivo": "Certificado-21_firmado.pdf"
+  },
+  {
+    "nombre": "clara ninfa godoy gamarra ",
+    "cedula": "7154220",
+    "archivo": "Certificado-22_firmado.pdf"
+  },
+  {
+    "nombre": "fidel barreto escobar ",
+    "cedula": "6013117",
+    "archivo": "Certificado-23_firmado.pdf"
+  },
+  {
+    "nombre": "josé carlos toledo gonzález ",
+    "cedula": "6369623",
+    "archivo": "Certificado-24_firmado.pdf"
+  },
+  {
+    "nombre": "maricela insfrán mora ",
+    "cedula": "6096331",
+    "archivo": "Certificado-25_firmado.pdf"
+  },
+  {
+    "nombre": "lourdes beatriz candia vargas ",
+    "cedula": "3534656",
+    "archivo": "Certificado-26_firmado.pdf"
+  },
+  {
+    "nombre": "ledys maricel castellano macoritto",
+    "cedula": "6295600",
+    "archivo": "Certificado-27_firmado.pdf"
+  },
+  {
+    "nombre": "yara fernanda urdera ecke",
+    "cedula": "5666966",
+    "archivo": "Certificado-28_firmado.pdf"
+  },
+  {
+    "nombre": "leticia noemí cañete domínguez ",
+    "cedula": "8298098",
+    "archivo": "Certificado-29_firmado.pdf"
+  },
+  {
+    "nombre": "sergio manuel espinola arce",
+    "cedula": "3497190",
+    "archivo": "Certificado-30_firmado.pdf"
+  },
+  {
+    "nombre": "joel valdez britos ",
+    "cedula": "6610999",
+    "archivo": "Certificado-31_firmado.pdf"
+  },
+  {
+    "nombre": "luis alberto alvarenga hermosilla",
+    "cedula": "5526775",
+    "archivo": "Certificado-32_firmado.pdf"
+  },
+  {
+    "nombre": "elodia ines zarate godoy",
+    "cedula": "3435319",
+    "archivo": "Certificado-33_firmado.pdf"
+  },
+  {
+    "nombre": "maría trinidad jonez",
+    "cedula": "6164081",
+    "archivo": "Certificado-34_firmado.pdf"
+  },
+  {
+    "nombre": "francisco javier páez giménez ",
+    "cedula": "1333123",
+    "archivo": "Certificado-35_firmado.pdf"
+  },
+  {
+    "nombre": "sara yessica ojeda lópez ",
+    "cedula": "7845381",
+    "archivo": "Certificado-36_firmado.pdf"
+  },
+  {
+    "nombre": "julia marcela alfonso navarro ",
+    "cedula": "5522460",
+    "archivo": "Certificado-37_firmado.pdf"
+  },
+  {
+    "nombre": "wendy yemina ortiz benítez ",
+    "cedula": "5276226",
+    "archivo": "Certificado-38_firmado.pdf"
+  },
+  {
+    "nombre": "josé derlis barreto arce",
+    "cedula": "4039732",
+    "archivo": "Certificado-39_firmado.pdf"
+  },
+  {
+    "nombre": "ester gonzález ",
+    "cedula": "6664913",
+    "archivo": "Certificado-40_firmado.pdf"
+  },
+  {
+    "nombre": "liz marlene sotoa cantero ",
+    "cedula": "8013586",
+    "archivo": "Certificado-41_firmado.pdf"
+  },
+  {
+    "nombre": "nancy mabel morel ayala ",
+    "cedula": "4281848",
+    "archivo": "Certificado-42_firmado.pdf"
+  },
+  {
+    "nombre": "ignacio moreira falcon ",
+    "cedula": "5859110",
+    "archivo": "Certificado-43_firmado.pdf"
+  },
+  {
+    "nombre": "jimmi arguello ",
+    "cedula": "7288201",
+    "archivo": "Certificado-44_firmado.pdf"
+  },
+  {
+    "nombre": "blanca elizabeth blanco acosta ",
+    "cedula": "8362577",
+    "archivo": "Certificado-45_firmado.pdf"
+  },
+  {
+    "nombre": "luana godoy escobar ",
+    "cedula": "6841113",
+    "archivo": "Certificado-46_firmado.pdf"
+  },
+  {
+    "nombre": "gustavo fidel garcia almada",
+    "cedula": "5894432",
+    "archivo": "Certificado-47_firmado.pdf"
+  },
+  {
+    "nombre": "rodrigo lópez ",
+    "cedula": "5357295",
+    "archivo": "Certificado-48_firmado.pdf"
+  },
+  {
+    "nombre": "marisa elizabet marin figueredo ",
+    "cedula": "3435297",
+    "archivo": "Certificado-49_firmado.pdf"
+  },
+  {
+    "nombre": "hugo daniel servin gonzalez ",
+    "cedula": "4678491",
+    "archivo": "Certificado-50_firmado.pdf"
+  },
+  {
+    "nombre": "fabio a lopez ",
+    "cedula": "7201060",
+    "archivo": "Certificado-51_firmado.pdf"
+  },
+  {
+    "nombre": "nery rolando rojas bogado ",
+    "cedula": "6614831",
+    "archivo": "Certificado-52_firmado.pdf"
+  },
+  {
+    "nombre": "cynthia duarte ",
+    "cedula": "5665882",
+    "archivo": "Certificado-53_firmado.pdf"
+  },
+  {
+    "nombre": "cruz erico martínez lópez ",
+    "cedula": "4966185",
+    "archivo": "Certificado-54_firmado.pdf"
+  },
+  {
+    "nombre": "oscar emanuel escurra benitez",
+    "cedula": "5665856",
+    "archivo": "Certificado-55_firmado.pdf"
+  },
+  {
+    "nombre": "nabila concepcion aquino urbina ",
+    "cedula": "6224101",
+    "archivo": "Certificado-56_firmado.pdf"
+  },
+  {
+    "nombre": "alex ariel benitez velazquez",
+    "cedula": "7501255",
+    "archivo": "Certificado-57_firmado.pdf"
+  },
+  {
+    "nombre": "fátima figueredo ",
+    "cedula": "7838808",
+    "archivo": "Certificado-58_firmado.pdf"
+  },
+  {
+    "nombre": "laura noemí garcete gonzalez ",
+    "cedula": "6178750",
+    "archivo": "Certificado-59_firmado.pdf"
+  },
+  {
+    "nombre": "fernando javier zorrilla vera",
+    "cedula": "4781980",
+    "archivo": "Certificado-60_firmado.pdf"
+  },
+  {
+    "nombre": "raquel gonzález alcaráz",
+    "cedula": "3680589",
+    "archivo": "Certificado-61_firmado.pdf"
+  },
+  {
+    "nombre": "ruth daiana miranda gonzalez ",
+    "cedula": "6929802",
+    "archivo": "Certificado-62_firmado.pdf"
+  },
+  {
+    "nombre": "maria rodas ",
+    "cedula": "4859896",
+    "archivo": "Certificado-63_firmado.pdf"
+  },
+  {
+    "nombre": "fabiola martinez  gimenez ",
+    "cedula": "5027267",
+    "archivo": "Certificado-64_firmado.pdf"
+  },
+  {
+    "nombre": "alexis caballero yegros ",
+    "cedula": "5601278",
+    "archivo": "Certificado-65_firmado.pdf"
+  },
+  {
+    "nombre": "gabriel barrios benitez ",
+    "cedula": "5930217",
+    "archivo": "Certificado-66_firmado.pdf"
+  },
+  {
+    "nombre": "arturo sadan martinez aguilera ",
+    "cedula": "6369327",
+    "archivo": "Certificado-67_firmado.pdf"
+  },
+  {
+    "nombre": "carmelo benitez ",
+    "cedula": "3887268",
+    "archivo": "Certificado-68_firmado.pdf"
+  },
+  {
+    "nombre": "alice mónica marin figueredo ",
+    "cedula": "4032183",
+    "archivo": "Certificado-69_firmado.pdf"
+  },
+  {
+    "nombre": "marlene mancuello romero ",
+    "cedula": "5551195",
+    "archivo": "Certificado-70_firmado.pdf"
+  },
+  {
+    "nombre": "blas ignacio bareiro benitez ",
+    "cedula": "6831831",
+    "archivo": "Certificado-71_firmado.pdf"
+  },
+  {
+    "nombre": "josé edmundo dávalos von eckstein ",
+    "cedula": "614450",
+    "archivo": "Certificado-72_firmado.pdf"
+  },
+  {
+    "nombre": "carlos rivas estigarribia ",
+    "cedula": "4029353",
+    "archivo": "Certificado-73_firmado.pdf"
+  },
+  {
+    "nombre": "lucrecio cabrera velazquez ",
+    "cedula": "1697133",
+    "archivo": "Certificado-74_firmado.pdf"
+  },
+  {
+    "nombre": "mirian celeste ojeda rojas ",
+    "cedula": "5033846",
+    "archivo": "Certificado-75_firmado.pdf"
+  },
+  {
+    "nombre": "marcelo de jesús ríos mendoza ",
+    "cedula": "7380548",
+    "archivo": "Certificado-76_firmado.pdf"
+  },
+  {
+    "nombre": "víctor hugo martínez bello ",
+    "cedula": "2471128",
+    "archivo": "Certificado-77_firmado.pdf"
+  },
+  {
+    "nombre": "carlos rivas estigarribia ",
+    "cedula": "4029353",
+    "archivo": "Certificado-78_firmado.pdf"
+  },
+  {
+    "nombre": "laura noelia méndez cardozo ",
+    "cedula": "6227203",
+    "archivo": "Certificado-79_firmado.pdf"
+  },
+  {
+    "nombre": "dahiani maribel rojas galeano ",
+    "cedula": "6546437",
+    "archivo": "Certificado-80_firmado.pdf"
+  },
+  {
+    "nombre": "gladys bobadilla gonzález ",
+    "cedula": "6805651",
+    "archivo": "Certificado-81_firmado.pdf"
+  },
+  {
+    "nombre": "javier gutierrez rios",
+    "cedula": "3672824",
+    "archivo": "Certificado-82_firmado.pdf"
+  },
+  {
+    "nombre": "blanca lourdes miranda benítez ",
+    "cedula": "4858174",
+    "archivo": "Certificado-83_firmado.pdf"
+  },
+  {
+    "nombre": "marta elena gonzález paredes ",
+    "cedula": "5844826",
+    "archivo": "Certificado-84_firmado.pdf"
+  },
+  {
+    "nombre": "alan mathias centurión garcía ",
+    "cedula": "6956888",
+    "archivo": "Certificado-85_firmado.pdf"
+  },
+  {
+    "nombre": "sandra lorena barreto jara",
+    "cedula": "3697100",
+    "archivo": "Certificado-86_firmado.pdf"
+  },
+  {
+    "nombre": "maribel  duarte basili",
+    "cedula": "5996019",
+    "archivo": "Certificado-87_firmado.pdf"
+  },
+  {
+    "nombre": "sonia mariela medina paredes ",
+    "cedula": "2915246",
+    "archivo": "Certificado-88_firmado.pdf"
+  },
+  {
+    "nombre": "luis ortega acosta ",
+    "cedula": "8309860",
+    "archivo": "Certificado-89_firmado.pdf"
+  },
+  {
+    "nombre": "meliza naide rojas galeano ",
+    "cedula": "6570119",
+    "archivo": "Certificado-90_firmado.pdf"
+  },
+  {
+    "nombre": "sofia danielle jara escobar",
+    "cedula": "8021867",
+    "archivo": "Certificado-91_firmado.pdf"
+  },
+  {
+    "nombre": "griselda bogado correa ",
+    "cedula": "5851353",
+    "archivo": "Certificado-92_firmado.pdf"
+  },
+  {
+    "nombre": "aldo ariel cañete dominguez ",
+    "cedula": "5068650",
+    "archivo": "Certificado-93_firmado.pdf"
+  },
+  {
+    "nombre": "javier mieres giménez ",
+    "cedula": "6778728",
+    "archivo": "Certificado-94_firmado.pdf"
+  },
+  {
+    "nombre": "merly guadalupe espinola martinez ",
+    "cedula": "6048708",
+    "archivo": "Certificado-95_firmado.pdf"
+  },
+  {
+    "nombre": "maría nelly gonzález ",
+    "cedula": "4890499",
+    "archivo": "Certificado-96_firmado.pdf"
+  },
+  {
+    "nombre": "angelica karina vera campuzano",
+    "cedula": "6096272",
+    "archivo": "Certificado-97_firmado.pdf"
+  },
+  {
+    "nombre": "merly elena acosta martínez ",
+    "cedula": "5666943",
+    "archivo": "Certificado-98_firmado.pdf"
+  },
+  {
+    "nombre": "miguel gonzález ",
+    "cedula": "6206088",
+    "archivo": "Certificado-99_firmado.pdf"
+  },
+  {
+    "nombre": "lider gustavo romero coronel ",
+    "cedula": "7520133",
+    "archivo": "Certificado-100_firmado.pdf"
+  },
+  {
+    "nombre": "liz rosana rotela gonzález ",
+    "cedula": "6023498",
+    "archivo": "Certificado-101_firmado.pdf"
+  },
+  {
+    "nombre": "juan angel maldonado solaeche",
+    "cedula": "7375941",
+    "archivo": "Certificado-102_firmado.pdf"
+  },
+  {
+    "nombre": "maría esmelda mendieta britez ",
+    "cedula": "7116894",
+    "archivo": "Certificado-103_firmado.pdf"
+  },
+  {
+    "nombre": "abel dario cantero ortega ",
+    "cedula": "4885025",
+    "archivo": "Certificado-104_firmado.pdf"
+  },
+  {
+    "nombre": "fredys hernan leite recalde",
+    "cedula": "4802540",
+    "archivo": "Certificado-105_firmado.pdf"
+  },
+  {
+    "nombre": "luana elizabeth nuñez lópez ",
+    "cedula": "5988141",
+    "archivo": "Certificado-106_firmado.pdf"
+  },
+  {
+    "nombre": "andrea dahiana ruiz diaz avalos",
+    "cedula": "6303947",
+    "archivo": "Certificado-107_firmado.pdf"
+  },
+  {
+    "nombre": "vanina monserrath vazquez servin ",
+    "cedula": "7461022",
+    "archivo": "Certificado-108_firmado.pdf"
+  },
+  {
+    "nombre": "eva mariza capdevila lópez ",
+    "cedula": "4669705",
+    "archivo": "Certificado-109_firmado.pdf"
+  },
+  {
+    "nombre": "víctor eduardo cristaldo",
+    "cedula": "5286449",
+    "archivo": "Certificado-110_firmado.pdf"
+  },
+  {
+    "nombre": "cristhian david candia ruiz diaz ",
+    "cedula": "5300236",
+    "archivo": "Certificado-111_firmado.pdf"
+  },
+  {
+    "nombre": "jorge elías galeano barreto ",
+    "cedula": "5774143",
+    "archivo": "Certificado-112_firmado.pdf"
+  },
+  {
+    "nombre": "noelia liliana portillo marín ",
+    "cedula": "5033960",
+    "archivo": "Certificado-113_firmado.pdf"
+  },
+  {
+    "nombre": "mauro britos cano ",
+    "cedula": "6936816",
+    "archivo": "Certificado-114_firmado.pdf"
+  },
+  {
+    "nombre": "lucero araceli martinez franco",
+    "cedula": "7357412",
+    "archivo": "Certificado-115_firmado.pdf"
+  },
+  {
+    "nombre": "sady larissa franco gimenez ",
+    "cedula": "6834142",
+    "archivo": "Certificado-116_firmado.pdf"
+  },
+  {
+    "nombre": "nestor villasanti martínez ",
+    "cedula": "6077955",
+    "archivo": "Certificado-117_firmado.pdf"
+  },
+  {
+    "nombre": "héctor augusto villalba marin",
+    "cedula": "5546357",
+    "archivo": "Certificado-118_firmado.pdf"
+  },
+  {
+    "nombre": "nadia luján sánchez torres",
+    "cedula": "6670321",
+    "archivo": "Certificado-119_firmado.pdf"
+  },
+  {
+    "nombre": "magda grisel azcona villagra",
+    "cedula": "7144961",
+    "archivo": "Certificado-120_firmado.pdf"
+  },
+  {
+    "nombre": "alexsander emanuel insfran romero ",
+    "cedula": "6541819",
+    "archivo": "Certificado-121_firmado.pdf"
+  },
+  {
+    "nombre": "cristhian juan manuel sarubbi leiva ",
+    "cedula": "4710263",
+    "archivo": "Certificado-122_firmado.pdf"
+  },
+  {
+    "nombre": "igor rafael acosta grzibowski ",
+    "cedula": "7300863",
+    "archivo": "Certificado-123_firmado.pdf"
+  },
+  {
+    "nombre": "luana gisselle esquivel gimenez ",
+    "cedula": "55785428",
+    "archivo": "Certificado-124_firmado.pdf"
+  },
+  {
+    "nombre": "adela de jesús larrea sánchez ",
+    "cedula": "6377246",
+    "archivo": "Certificado-125_firmado.pdf"
+  },
+  {
+    "nombre": "sinthia fabiola rodas urbina",
+    "cedula": "5636342",
+    "archivo": "Certificado-126_firmado.pdf"
+  },
+  {
+    "nombre": "tania elizabeth martínez aguilera ",
+    "cedula": "5524105",
+    "archivo": "Certificado-127_firmado.pdf"
+  },
+  {
+    "nombre": "cyntia gayoso moran ",
+    "cedula": "6546588",
+    "archivo": "Certificado-128_firmado.pdf"
+  },
+  {
+    "nombre": "ramona noemi mujica chaparro ",
+    "cedula": "6145723",
+    "archivo": "Certificado-129_firmado.pdf"
+  },
+  {
+    "nombre": "blas jose gimenez alfonzo ",
+    "cedula": "6296913",
+    "archivo": "Certificado-130_firmado.pdf"
+  },
+  {
+    "nombre": "ada eliany brizuela cañete ",
+    "cedula": "6702791",
+    "archivo": "Certificado-131_firmado.pdf"
+  },
+  {
+    "nombre": "giselle de lourdes uran farias ",
+    "cedula": "6347266",
+    "archivo": "Certificado-132_firmado.pdf"
+  },
+  {
+    "nombre": "cristian ramón chamorro antunez ",
+    "cedula": "5298172",
+    "archivo": "Certificado-133_firmado.pdf"
+  },
+  {
+    "nombre": "oscar ramon noria vera",
+    "cedula": "6925108",
+    "archivo": "Certificado-134_firmado.pdf"
+  },
+  {
+    "nombre": "marlene velázquez ",
+    "cedula": "5980257",
+    "archivo": "Certificado-135_firmado.pdf"
+  },
+  {
+    "nombre": "myriam benítez correa ",
+    "cedula": "3206388",
+    "archivo": "Certificado-136_firmado.pdf"
+  },
+  {
+    "nombre": "sannie fabiola contrera larrea",
+    "cedula": "5003882",
+    "archivo": "Certificado-137_firmado.pdf"
+  },
+  {
+    "nombre": "derlis britez lomaquis ",
+    "cedula": "5871578",
+    "archivo": "Certificado-138_firmado.pdf"
+  },
+  {
+    "nombre": "abel dario gonzález pereira ",
+    "cedula": "5753960",
+    "archivo": "Certificado-139_firmado.pdf"
+  },
+  {
+    "nombre": "miguel david gonzález barreto",
+    "cedula": "4868633",
+    "archivo": "Certificado-140_firmado.pdf"
+  },
+  {
+    "nombre": "jade belén troche portilla",
+    "cedula": "5518290",
+    "archivo": "Certificado-141_firmado.pdf"
+  },
+  {
+    "nombre": "mónica galeano alfonzo ",
+    "cedula": "6874499",
+    "archivo": "Certificado-142_firmado.pdf"
+  },
+  {
+    "nombre": "andrea vanessa gaette cáceres",
+    "cedula": "5719570",
+    "archivo": "Certificado-143_firmado.pdf"
+  },
+  {
+    "nombre": "deisy cabral",
+    "cedula": "6733051",
+    "archivo": "Certificado-144_firmado.pdf"
+  },
+  {
+    "nombre": "zully esther rojas kuibida ",
+    "cedula": "7398612",
+    "archivo": "Certificado-145_firmado.pdf"
+  },
+  {
+    "nombre": "javier vega núñez ",
+    "cedula": "7007674",
+    "archivo": "Certificado-146_firmado.pdf"
+  },
+  {
+    "nombre": "juan gabriel benítez alvarenga ",
+    "cedula": "6537137",
+    "archivo": "Certificado-147_firmado.pdf"
+  },
+  {
+    "nombre": "marlene cardozo franco ",
+    "cedula": "5225598",
+    "archivo": "Certificado-148_firmado.pdf"
+  },
+  {
+    "nombre": "abner antony bogado molas ",
+    "cedula": "6731695",
+    "archivo": "Certificado-149_firmado.pdf"
+  },
+  {
+    "nombre": "ada lujan cardozo franco",
+    "cedula": "6820068",
+    "archivo": "Certificado-150_firmado.pdf"
+  },
+  {
+    "nombre": "dahiana luján franco centurión ",
+    "cedula": "6868824",
+    "archivo": "Certificado-151_firmado.pdf"
+  },
+  {
+    "nombre": "araceli paola gonzález jara ",
+    "cedula": "6702772",
+    "archivo": "Certificado-152_firmado.pdf"
+  },
+  {
+    "nombre": "eduardo colmán ",
+    "cedula": "5630344",
+    "archivo": "Certificado-153_firmado.pdf"
+  },
+  {
+    "nombre": "nidia belen arguello zaracho ",
+    "cedula": "7288204",
+    "archivo": "Certificado-154_firmado.pdf"
+  },
+  {
+    "nombre": "mariluz adorno chamorro",
+    "cedula": "4739431",
+    "archivo": "Certificado-155_firmado.pdf"
+  },
+  {
+    "nombre": "victoria maricela cardozo franco ",
+    "cedula": "7202296",
+    "archivo": "Certificado-156_firmado.pdf"
+  },
+  {
+    "nombre": "edgar daniel páez villalba ",
+    "cedula": "6995615",
+    "archivo": "Certificado-157_firmado.pdf"
+  },
+  {
+    "nombre": "yessica paola yarati lópez ",
+    "cedula": "6919446",
+    "archivo": "Certificado-158_firmado.pdf"
+  },
+  {
+    "nombre": "maría estefany decoud cáceres ",
+    "cedula": "7521934",
+    "archivo": "Certificado-159_firmado.pdf"
+  },
+  {
+    "nombre": "eva angelica ferreira fernández ",
+    "cedula": "4014920",
+    "archivo": "Certificado-160_firmado.pdf"
+  },
+  {
+    "nombre": "lourdes elizabeth silveira rojas",
+    "cedula": "1239925",
+    "archivo": "Certificado-161_firmado.pdf"
+  },
+  {
+    "nombre": "alex fernando ojeda martinez",
+    "cedula": "6856960",
+    "archivo": "Certificado-162_firmado.pdf"
+  },
+  {
+    "nombre": "sara belén aquino martínez ",
+    "cedula": "7104697",
+    "archivo": "Certificado-163_firmado.pdf"
+  },
+  {
+    "nombre": "kevin ariel domínguez aguilar ",
+    "cedula": "5693025",
+    "archivo": "Certificado-164_firmado.pdf"
+  },
+  {
+    "nombre": "lilian karina giménez pereira ",
+    "cedula": "7576077",
+    "archivo": "Certificado-165_firmado.pdf"
+  },
+  {
+    "nombre": "vanessa jazmín larrea gimenez ",
+    "cedula": "6975387",
+    "archivo": "Certificado-166_firmado.pdf"
+  },
+  {
+    "nombre": "jessica montserrat gomez ortega ",
+    "cedula": "5886569",
+    "archivo": "Certificado-167_firmado.pdf"
+  },
+  {
+    "nombre": "steven emmanuel ramirez gonzalez",
+    "cedula": "5353142",
+    "archivo": "Certificado-168_firmado.pdf"
+  },
+  {
+    "nombre": "liz fabiola morel gonzález ",
+    "cedula": "5281243",
+    "archivo": "Certificado-169_firmado.pdf"
+  },
+  {
+    "nombre": "víctor eduardo cristaldo núñez ",
+    "cedula": "5286449",
+    "archivo": "Certificado-170_firmado.pdf"
+  },
+  {
+    "nombre": "pedro david santacruz aquino",
+    "cedula": "5785300",
+    "archivo": "Certificado-171_firmado.pdf"
+  },
+  {
+    "nombre": "roberto carlos delvalle",
+    "cedula": "7133187",
+    "archivo": "Certificado-172_firmado.pdf"
+  },
+  {
+    "nombre": "fernando florentin ",
+    "cedula": "4428668",
+    "archivo": "Certificado-173_firmado.pdf"
+  },
+  {
+    "nombre": "cesar arlindo sanabria guayuan ",
+    "cedula": "5401108",
+    "archivo": "Certificado-174_firmado.pdf"
+  },
+  {
+    "nombre": "juan emanuel riquelme rosales ",
+    "cedula": "3628000",
+    "archivo": "Certificado-175_firmado.pdf"
+  },
+  {
+    "nombre": "nathalia de jesús gonzález zena",
+    "cedula": "6350371",
+    "archivo": "Certificado-176_firmado.pdf"
+  },
+  {
+    "nombre": "evelin paola zeballo vera ",
+    "cedula": "5827911",
+    "archivo": "Certificado-177_firmado.pdf"
+  },
+  {
+    "nombre": "denys dominguez aguilar ",
+    "cedula": "5693023",
+    "archivo": "Certificado-178_firmado.pdf"
+  },
+  {
+    "nombre": "griselda frutos cardozo ",
+    "cedula": "5145022",
+    "archivo": "Certificado-179_firmado.pdf"
+  },
+  {
+    "nombre": "jazmin de oliveira ",
+    "cedula": "5511612",
+    "archivo": "Certificado-180_firmado.pdf"
+  },
+  {
+    "nombre": "laura díaz verdun ",
+    "cedula": "7323328",
+    "archivo": "Certificado-181_firmado.pdf"
+  },
+  {
+    "nombre": "fredy aquino ",
+    "cedula": "7426342",
+    "archivo": "Certificado-182_firmado.pdf"
+  },
+  {
+    "nombre": "maría fatima yegros samaniego ",
+    "cedula": "6554105",
+    "archivo": "Certificado-183_firmado.pdf"
+  },
+  {
+    "nombre": "alan oviedo ",
+    "cedula": "6034914",
+    "archivo": "Certificado-184_firmado.pdf"
+  },
+  {
+    "nombre": "kamily michely da silva escobar",
+    "cedula": "7349326",
+    "archivo": "Certificado-185_firmado.pdf"
+  },
+  {
+    "nombre": "daicy lisa castro varela ",
+    "cedula": "7467901",
+    "archivo": "Certificado-186_firmado.pdf"
+  },
+  {
+    "nombre": "damaris clarice pérez rojas",
+    "cedula": "6915049",
+    "archivo": "Certificado-187_firmado.pdf"
+  },
+  {
+    "nombre": "judith aracely mereles cabrera ",
+    "cedula": "5906640",
+    "archivo": "Certificado-188_firmado.pdf"
+  },
+  {
+    "nombre": "fabiana morel galku",
+    "cedula": "6834284",
+    "archivo": "Certificado-189_firmado.pdf"
+  },
+  {
+    "nombre": "johana soledad gómez viera ",
+    "cedula": "5530141",
+    "archivo": "Certificado-190_firmado.pdf"
+  },
+  {
+    "nombre": "deysi garay ferreira",
+    "cedula": "7420099",
+    "archivo": "Certificado-191_firmado.pdf"
+  },
+  {
+    "nombre": "pedro adrian gonzález cabral ",
+    "cedula": "7533548",
+    "archivo": "Certificado-192_firmado.pdf"
+  },
+  {
+    "nombre": "sannie noelia ramirez colina ",
+    "cedula": "5857576",
+    "archivo": "Certificado-193_firmado.pdf"
+  },
+  {
+    "nombre": "luis arnaldo espinola zaracho ",
+    "cedula": "5918879",
+    "archivo": "Certificado-194_firmado.pdf"
+  },
+  {
+    "nombre": "virgínia soledad campuzano benitez ",
+    "cedula": "6687858",
+    "archivo": "Certificado-195_firmado.pdf"
+  },
+  {
+    "nombre": "josé luis cespedes romero",
+    "cedula": "5219595",
+    "archivo": "Certificado-196_firmado.pdf"
+  },
+  {
+    "nombre": "josé gullon servian ",
+    "cedula": "6671338",
+    "archivo": "Certificado-197_firmado.pdf"
+  },
+  {
+    "nombre": "sonia giselle adorno villagra ",
+    "cedula": "7229479",
+    "archivo": "Certificado-198_firmado.pdf"
+  },
+  {
+    "nombre": "junior fabian ocampos osorio ",
+    "cedula": "8011268",
+    "archivo": "Certificado-199_firmado.pdf"
+  },
+  {
+    "nombre": "elis natalia molinas ozuna ",
+    "cedula": "5820772",
+    "archivo": "Certificado-200_firmado.pdf"
+  },
+  {
+    "nombre": "anny milhena díaz paredes ",
+    "cedula": "5003830",
+    "archivo": "Certificado-201_firmado.pdf"
+  },
+  {
+    "nombre": "liliana elizabeth cristaldo pedrozo",
+    "cedula": "983387777",
+    "archivo": "Certificado-202_firmado.pdf"
+  },
+  {
+    "nombre": "diana jara santacruz ",
+    "cedula": "4885046",
+    "archivo": "Certificado-203_firmado.pdf"
+  },
+  {
+    "nombre": "liliana elizabeth cristaldo pedrozo",
+    "cedula": "983387777",
+    "archivo": "Certificado-204_firmado.pdf"
+  },
+  {
+    "nombre": "graciela de jesús gonzález gonzález ",
+    "cedula": "5761348",
+    "archivo": "Certificado-205_firmado.pdf"
+  },
+  {
+    "nombre": "leonardo junior velazquez gomez",
+    "cedula": "6806887",
+    "archivo": "Certificado-206_firmado.pdf"
+  },
+  {
+    "nombre": "olga duarte ",
+    "cedula": "5996020",
+    "archivo": "Certificado-207_firmado.pdf"
+  },
+  {
+    "nombre": "aurelia gonzalez",
+    "cedula": "3809639",
+    "archivo": "Certificado-208_firmado.pdf"
+  },
+  {
+    "nombre": "daniela báez garcete ",
+    "cedula": "4858144",
+    "archivo": "Certificado-209_firmado.pdf"
+  },
+  {
+    "nombre": "david noguera ",
+    "cedula": "6366843",
+    "archivo": "Certificado-210_firmado.pdf"
+  },
+  {
+    "nombre": "ada analía delgado martínez ",
+    "cedula": "2677629",
+    "archivo": "Certificado-211_firmado.pdf"
+  },
+  {
+    "nombre": "adilza elisabeth brizuela cañete ",
+    "cedula": "5138225",
+    "archivo": "Certificado-212_firmado.pdf"
+  },
+  {
+    "nombre": "carlos ramon esquivel jara",
+    "cedula": "5851375",
+    "archivo": "Certificado-213_firmado.pdf"
+  },
+  {
+    "nombre": "liz noemí lópez figueredo ",
+    "cedula": "7156424",
+    "archivo": "Certificado-214_firmado.pdf"
+  },
+  {
+    "nombre": "ariel amado meza rolón ",
+    "cedula": "4092226",
+    "archivo": "Certificado-215_firmado.pdf"
+  },
+  {
+    "nombre": "mirian beatriz acosta alvarenga",
+    "cedula": "3234922",
+    "archivo": "Certificado-216_firmado.pdf"
+  },
+  {
+    "nombre": "liz karina ayala blanco",
+    "cedula": "6269877",
+    "archivo": "Certificado-217_firmado.pdf"
+  },
+  {
+    "nombre": "diego fernando valenzuela ortega ",
+    "cedula": "5032970",
+    "archivo": "Certificado-218_firmado.pdf"
+  },
+  {
+    "nombre": "aldo mereles",
+    "cedula": "5612310",
+    "archivo": "Certificado-219_firmado.pdf"
+  },
+  {
+    "nombre": "lourdes silveira rojas",
+    "cedula": "1239925",
+    "archivo": "Certificado-220_firmado.pdf"
+  },
+  {
+    "nombre": "cesar fernando ibarra sanabria ",
+    "cedula": "4835877",
+    "archivo": "Certificado-221_firmado.pdf"
+  },
+  {
+    "nombre": "amada gutiérrez ",
+    "cedula": "1299368",
+    "archivo": "Certificado-222_firmado.pdf"
+  },
+  {
+    "nombre": "mirian petrona garcete benítez ",
+    "cedula": "3470615",
+    "archivo": "Certificado-223_firmado.pdf"
+  },
+  {
+    "nombre": "sevastiana burgos martinez",
+    "cedula": "6929954",
+    "archivo": "Certificado-224_firmado.pdf"
+  },
+  {
+    "nombre": "juan arnoldo benítez rios ",
+    "cedula": "7342455",
+    "archivo": "Certificado-225_firmado.pdf"
+  },
+  {
+    "nombre": "isidro de jesús rodriguez noria ",
+    "cedula": "5698039",
+    "archivo": "Certificado-226_firmado.pdf"
+  },
+  {
+    "nombre": "alvaro miguel valenzuela ortega ",
+    "cedula": "5032968",
+    "archivo": "Certificado-227_firmado.pdf"
+  },
+  {
+    "nombre": "olga isabel cabrera peña ",
+    "cedula": "4632593",
+    "archivo": "Certificado-228_firmado.pdf"
+  },
+  {
+    "nombre": "virgilia chaparro martinez",
+    "cedula": "4195380",
+    "archivo": "Certificado-229_firmado.pdf"
+  },
+  {
+    "nombre": "luis miguel morel mareco",
+    "cedula": "6660251",
+    "archivo": "Certificado-230_firmado.pdf"
+  },
+  {
+    "nombre": "marcos rubén martínez centurión",
+    "cedula": "4234222",
+    "archivo": "Certificado-231_firmado.pdf"
+  }
+    ];
+
+    const inputBusqueda = document.getElementById("busqueda");
+    const tabla = document.getElementById("tablaResultados");
+    const cuerpo = document.getElementById("tablaBody");
+    const sinResultados = document.getElementById("noResultados");
+
+    function mostrarResultados(filtrados) {
+      cuerpo.innerHTML = "";
+
+      if (filtrados.length === 0) {
+        tabla.style.display = "none";
+        sinResultados.style.display = "block";
+        return;
+      }
+
+      filtrados.forEach(cert => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
+          <td>${capitalizar(cert.nombre)}</td>
+          
+          <td><a href="certificados/${cert.archivo}" target="_blank">Descargar</a></td>
+        `;
+        cuerpo.appendChild(fila);
+      });
+
+      tabla.style.display = "table";
+      sinResultados.style.display = "none";
+    }
+
+    function capitalizar(texto) {
+      return texto.replace(/\b\w/g, l => l.toUpperCase());
+    }
+
+    inputBusqueda.addEventListener("input", () => {
+      const query = inputBusqueda.value.trim().toLowerCase();
+      const resultados = certificados.filter(cert =>
+        cert.nombre.includes(query) || cert.cedula.includes(query)
+      );
+      mostrarResultados(resultados);
+    });
+
+    // Mostrar todo al cargar
+    window.addEventListener("load", () => {
+      mostrarResultados(certificados);
+    });
+  </script>
+</body>
+</html>
+
+

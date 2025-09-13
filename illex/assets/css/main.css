@@ -5999,7 +5999,7 @@ h6 {
 .call-to-action__three-content h3 {
   margin: 0;
   font-size: 36px;
-  font-family: var(--special-font);
+  
   margin-bottom: 20px;
   color: #fff;
   font-weight: bold;
@@ -6940,7 +6940,7 @@ h6 {
 .about-one__count h4 {
   margin: 0;
   font-size: 30px;
-  font-family: var(--special-font);
+  
   color: #fff;
   line-height: 1;
 }

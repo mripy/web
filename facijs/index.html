@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Solicitud de Asesorías</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .logo {
+            max-width: 30%;
+            height: auto;
+        }
+        .loading, .success-message {
+            display: none;
+            font-size: 1.2em;
+            color: #81392D;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="logo.webp" alt="Logo" class="logo">
+        <h1>Formulario de Solicitud de Asesorías Jurídicas Gratuitas</h1>
+        <h4 style="text-align: justify;">Señor(a) usuario(a) agradecemos por favor completar el siguiente formulario para que su consulta sea atendida por un miembro del Consultorio Jurídico de la FACIJS.</h3>
+        <form id="consultaForm" action="send_mail.php" method="post">
+            
+            <label for="sede">Sede/Filial de la facultad: *</label>
+            <select id="sede" name="sede" required>
+                <option value="">Seleccione una sede o filial</option>
+                <option value="curuguaty">Curuguaty</option>
+                <option value="salto_guaira">Saltos del Guairá</option>
+            </select>
+            
+            <label for="nombre">Nombre y apellido: *</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="documento">Número de documento: *</label>
+            <input type="text" id="documento" name="documento" required>
+            
+            <label for="fechaNacimiento">Fecha de nacimiento: *</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+            
+            <label for="edad">Edad: *</label>
+            <input type="number" id="edad" name="edad" required readonly>
+            
+            <label for="telefono">Teléfono/celular: *</label>
+            <input type="text" id="telefono" name="telefono" required>
+            
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email">
+            
+            <label>Si usted es una persona con discapacidad, indique si para la atención de su consulta y/o solicitud, requieren algún ajuste razonable: *</label>
+            <div class="radio-group">
+                <label><input type="radio" name="ajuste" value="Si requiero" required> Si requiero</label>
+                <label><input type="radio" name="ajuste" value="No requiero"> No requiero</label>
+            </div>
+            
+            <label for="barrio">Barrio: *</label>
+            <input type="text" id="barrio" name="barrio" required>
+            
+            <label for="direccion">Dirección: *</label>
+            <input type="text" id="direccion" name="direccion" required>
+            
+            <label for="departamento">Departamento: *</label>
+            <select id="departamento" name="departamento" required>
+                <option value="">Seleccione un departamento</option>
+                <!-- Opciones se llenarán dinámicamente -->
+            </select>
+            
+            <label for="municipio">Municipio: *</label>
+            <select id="municipio" name="municipio" required>
+                <option value="">Seleccione un municipio</option>
+                <!-- Opciones se llenarán dinámicamente -->
+            </select>
+            
+            <label for="descripcion">Descripción de los hechos: * (Por favor relate los hechos en forma clara y lo más completa posible).</label>
+            <textarea id="descripcion" name="descripcion" required></textarea>
+            
+            <label for="intencion">¿Cuál es la intención de su consulta? (Pretensiones) *</label>
+            <textarea id="intencion" name="intencion" required></textarea>
+            
+            <button type="submit">Enviar</button>
+        </form>
+        <br>
+        <div id="loading" class="loading">Enviando solicitud...</div>
+        <div id="successMessage" class="success-message">Solicitud enviada</div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        document.getElementById('fechaNacimiento').addEventListener('change', function() {
+            var fechaNacimiento = new Date(this.value);
+            var fechaActual = new Date();
+            var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
+            // Ajustar la edad si aún no se ha cumplido el año de nacimiento en este año
+            if (fechaActual.getMonth() < fechaNacimiento.getMonth() || 
+                (fechaActual.getMonth() === fechaNacimiento.getMonth() && 
+                fechaActual.getDate() < fechaNacimiento.getDate())) {
+                edad--;
+            }
+
+            document.getElementById('edad').value = edad;
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="2.png" type="image/png">
+    <title>Evaluación Docente - FACIJS - Filial Curuguaty</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="1.png" alt="Imagen Izquierda" class="logo">
+        <div class="titulo">
+            <h1>Evaluación Docente</h1>
+            <h2>Segundo Curso</h2>
+        </div>
+        <img src="2.png" alt="Imagen Derecha" class="logo">
+    </header>
+
+    <main>
+        <p style="text-align: justify;">Estimado Estudiante: Conocer la valoración que hacen los estudiantes acerca del desempeño de los docentes es de mucha importancia para la mejora continua del servicio educacional de la Facultad de Ciencias Jurídicas y Sociales de la Universidad Nacional de Canindeyú. Para el efecto, te solicitamos completar el siguiente formulario de la manera más objetiva posible, para que los resultados sean útiles para la toma de decisiones y mejoramiento continuo. El llenado es ANÓNIMO.</p>
+        
+        <div class="grilla-dias">
+
+            
+
+
+
+
+
+
+            <div class="dia">
+                <h3 class="encabezado-dia">Viernes</h3>
+                <ul class="grilla">
+                    <li class="item">
+                        <h2>Lic. María Luisa Galeano </h2>
+                        <p>Idioma II (Castellano II)</p>
+                        <a href="https://forms.gle/QKcVNM84Qp6TB47q9" class="boton" target="_blank">Evaluar</a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <div class="dia">
+                <h3 class="encabezado-dia">Jueves</h3>
+                <ul class="grilla">
+                    <li class="item">
+                        <h2>Abg. Víctor Martínez</h2>
+                        <p>Derecho Agrario</p>
+                        <a href="https://forms.gle/R5avGbNuTm5DcA7j9" class="boton" target="_blank">Evaluar</a>
+                    </li>
+                    <li class="item">
+                        <h2>Abg. Mirian Acosta</h2>
+                        <p>Derecho Romano II</p>
+                        <a href="https://forms.gle/tWgroXGktWr3WQ7G7" class="boton" target="_blank">Evaluar</a>
+                    </li>
+                </ul>
+            </div>
+
+            
+            <div class="dia">
+                <h3 class="encabezado-dia">Miércoles</h3>
+                <ul class="grilla">
+                    <li class="item">
+                        <h2>Abg. Ramón Florentín</h2>
+                        <p>Seminario II</p>
+                        <a href="https://forms.gle/K7ksRwVmxuiSuVQe8" class="boton" target="_blank">Evaluar</a>
+                    </li>
+                    <li class="item">
+                        <h2>Abg. Ruth Contrera</h2>
+                        <p>Derecho de la Niñez y la Adolescencia</p>
+                        <a href="https://forms.gle/3T2HwZQTxf3EUUEaA" class="boton" target="_blank">Evaluar</a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="dia">
+                <h3 class="encabezado-dia">Martes</h3>
+                <ul class="grilla">
+                    <li class="item">
+                        <h2>Abg. Jorge Prieto</h2>
+                        <p>Sociología Jurídica</p>
+                        <a href="https://forms.gle/VQQscPh8MxGZHAVm6" class="boton" target="_blank">Evaluar</a>
+                    </li>
+                    <li class="item">
+                        <h2>Abg. Magdalena Brítez</h2>
+                        <p>Derecho Penal I</p>
+                        <a href="https://forms.gle/JfEkyfTVFm6A8NKw5" class="boton" target="_blank">Evaluar</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="dia">
+                <h3 class="encabezado-dia">Lunes</h3>
+                <ul class="grilla">
+                    <li class="item">
+                        <h2>Abg. Ada Delgado</h2>
+                        <p>Derecho Civil Personas</p>
+                        <a href="https://forms.gle/SM3Vty78rTfydeRa6" class="boton" target="_blank">Evaluar</a>
+                    </li>
+                    <li class="item">
+                        <h2>Abg. Maria Lurdes Ibarrola</h2>
+                        <p>Derecho Laboral</p>
+                        <a href="https://forms.gle/TNbccM25aWqaBiP39" class="boton" target="_blank">Evaluar</a>
+                    </li>
+                </ul>
+            </div>
+
+            
+        </div>
+    </main>
+
+    <footer>
+        <p><span id="dia"></span>, <span id="fecha"></span></p>
+    </footer>
+
+    <script>
+        function obtenerFechaYDiaActual() {
+            const hoy = new Date();
+            const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
+            const opcionesDia = { weekday: 'long' };
+            const fecha = hoy.toLocaleDateString('es-ES', opcionesFecha);
+            const dia = hoy.toLocaleDateString('es-ES', opcionesDia);
+            return { fecha, dia };
+        }
+
+        const { fecha, dia } = obtenerFechaYDiaActual();
+        document.getElementById('fecha').textContent = fecha;
+        document.getElementById('dia').textContent = dia;
+    </script>
+</body>
+</html>

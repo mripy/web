@@ -1,0 +1,168 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #8f2927;
+    color: white;
+    padding: 10px;
+    align-items: center;
+}
+
+footer {
+    background-color: #8f2927;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto; /* Coloca el pie de página en la parte inferior */
+}
+
+.logo {
+    max-width: 50px;
+    height: auto;
+}
+
+.logo-izquierda {
+    margin-left: 10px;
+}
+
+.logo-derecha {
+    margin-right: 10px;
+}
+
+.titulo {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.titulo h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.titulo h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Estilos para la grilla de días */
+.grilla-dias {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre cada sección de día */
+}
+
+.dia {
+    background-color: #ffffff; /* Fondo blanco para cada sección de día */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados para un mejor estilo */
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar la sección */
+}
+
+.encabezado-dia {
+    background-color: #e0e0e0; /* Color de fondo claro para el encabezado del día */
+    color: #333; /* Color de texto oscuro */
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0;
+    text-align: center;
+}
+
+/* Estilos para la grilla dentro de cada día */
+.grilla {
+    list-style-type: none; /* Elimina las viñetas predeterminadas */
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Estilos para los items en la grilla */
+.item {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+p {
+    font-size: 14px;
+}
+
+.boton {
+    display: block;
+    background-color: #8f2927;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.boton:hover {
+    background-color: #5d1a18;
+}
+
+/* Media queries para estilos responsivos */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        max-width: 40px;
+    }
+
+    .titulo h1 {
+        font-size: 20px;
+    }
+
+    .titulo h2 {
+        font-size: 16px;
+    }
+
+    .grilla-dias {
+        padding: 10px;
+    }
+
+    .dia {
+        padding: 10px;
+    }
+
+    .grilla {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    .item {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .titulo h1 {
+        font-size: 18px;
+    }
+
+    .titulo h2 {
+        font-size: 14px;
+    }
+}

@@ -55,6 +55,7 @@
                 <img src="images/BLAN.png" alt="Imagen de inicio" style="max-width:70%; height:auto; display:block; margin:0 auto;">
 
                 <p class="max-w-md xl:max-w-none text-lg text-white opacity-80 mb-10">Escuchá la verdad, viví la noticia.</p><a class="inline-flex py-4 px-6 items-center justify-center text-lg font-medium text-teal-900 border border-lime-500 hover:border-white bg-lime-500 hover:bg-white rounded-full transition duration-200" href="https://api.whatsapp.com/send?phone=%2B595986748240">WhatsApp </a>
+                
               </div>
             </div>
           </div>
@@ -189,12 +190,18 @@
 </style>
 
 <div class="audio-player">
-  <button id="playPause" class="play-btn">❚❚</button>
+  <iframe 
+    src="http://aldianoticiaradio.on-air.fm/free/" 
+    width="100%" 
+    height="100" 
+    frameborder="0" 
+    scrolling="no"
+></iframe>
 </div>
 
 <script>
   // URL del archivo MP3
-  const audioUrl = "https://sapircast.caster.fm:10932/81dcF?token=3da7f02e3f38f09271b1104e15f2c37d"; // 🔸 reemplaza con tu URL
+  const audioUrl = "myradiostream.com/embed/aldianoticiaradio"; // 🔸 reemplaza con tu URL
 
   const playPauseBtn = document.getElementById("playPause");
   const audio = new Audio(audioUrl);

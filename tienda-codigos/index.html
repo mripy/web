@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Tu Tienda de Tecnología</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">TechStore<span style="color: var(--secondary-color);">.</span></a>
+            <div class="nav-icons" id="cart-btn">
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Descubre el Futuro hoy</h1>
+            <p>La mejor tecnología al mejor precio, directamente a tu puerta.</p>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <main class="container">
+        <h2 style="margin-bottom: 1.5rem;">Productos Destacados</h2>
+        <div id="products-container" class="products-grid">
+            <!-- Los productos se renderizarán aquí dinámicamente -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 TechStore. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Carrito Modal -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Tu Carrito</h3>
+                <button class="close-cart" id="close-cart">&times;</button>
+            </div>
+
+            <div class="cart-items" id="cart-items">
+                <!-- Items del carrito -->
+                <p style="text-align: center; color: var(--light-text); margin-top: 2rem;">Tu carrito está vacío</p>
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">$0.00</span>
+                </div>
+                <button class="checkout-btn"><i class="fab fa-whatsapp"></i> Enviar Pedido por WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="products.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

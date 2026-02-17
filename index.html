@@ -16,7 +16,8 @@
 
 	<meta name="categories" content="Empresa de informática">
 
-	<meta name="keywords" content="Front-End Developer, Miguel Rodriguez, Radio Online Paraguay, App Radio FM, Consultor TI, Sistemas Administrativos, Software, MR TECHDEV, Diseño Gráfico, Diseño web, Facturación electrónica, Servicios informáticos, Informáticos Curuguaty, MR Informática, Freelance Paraguay, Programador Paraguayo, Analista, Tecnología, Radio Online.">
+	<meta name="keywords"
+		content="Front-End Developer, Miguel Rodriguez, Radio Online Paraguay, App Radio FM, Consultor TI, Sistemas Administrativos, Software, MR TECHDEV, Diseño Gráfico, Diseño web, Facturación electrónica, Servicios informáticos, Informáticos Curuguaty, MR Informática, Freelance Paraguay, Programador Paraguayo, Analista, Tecnología, Radio Online.">
 
 	<meta property="og:image" content="/assets/images/favicon.png" />
 
@@ -59,24 +60,25 @@
 	<link rel="stylesheet" href="assets/css/default.css">
 
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="tienda-codigos/store.css">
 
-    <link rel="dns-prefetch" href="//www.google.com">
+	<link rel="dns-prefetch" href="//www.google.com">
 
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 
-    <link rel="dns-prefetch" href="//s.w.org">
+	<link rel="dns-prefetch" href="//s.w.org">
 
 
 
-   <!-- Retina.js - Load first for faster HQ mobile images. -->
+	<!-- Retina.js - Load first for faster HQ mobile images. -->
 
-   <script src="assets/js/plugins/retina/retina.min.js"></script>
+	<script src="assets/js/plugins/retina/retina.min.js"></script>
 
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-   <link href="assets/css/transition.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/transition.css" rel="stylesheet" type="text/css">
 
-   <script src="assets/js/transition.js"></script>
+	<script src="assets/js/transition.js"></script>
 
 
 
@@ -92,15 +94,17 @@
 
 	<script>
 
-		window.dataLayer=window.dataLayer || []; function gtag(){dataLayer.push(arguments);}gtag('js', new Date()); gtag('config', 'G-E20DYHKMSC');
+		window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-E20DYHKMSC');
 
 	</script>
 
 	<script>
 
-		!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '1117864105255944');fbq('track', 'PageView');
+		!function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1117864105255944'); fbq('track', 'PageView');
 
-	</script><noscript><img height="1" width="1" style="display:none"src="https://www.facebook.com/tr?id=1117864105255944&ev=PageView&noscript=1"/></noscript></head>
+	</script><noscript><img height="1" width="1" style="display:none"
+			src="https://www.facebook.com/tr?id=1117864105255944&ev=PageView&noscript=1" /></noscript>
+</head>
 
 <body>
 
@@ -148,7 +152,11 @@
 
 						<nav class="navbar navbar-expand-lg">
 
-							<a class="navbar-brand" href="index.html"> <img src="assets/images/logo.png" alt="Logo"> </a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="toggler-icon"></span> <span class="toggler-icon"></span> <span class="toggler-icon"></span> </button>
+							<a class="navbar-brand" href="index.html"> <img src="assets/images/logo.png" alt="Logo">
+							</a> <button class="navbar-toggler" type="button" data-toggle="collapse"
+								data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+								aria-expanded="false" aria-label="Toggle navigation"> <span class="toggler-icon"></span>
+								<span class="toggler-icon"></span> <span class="toggler-icon"></span> </button>
 
 							<div class="collapse navbar-collapse" id="navbarSupportedContent">
 
@@ -170,25 +178,21 @@
 
 								</ul>
 
-								<div class="ec-cart-widget"></div>
-
-								<div>
-
-									<script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?83675518&data_platform=code&data_date=2023-01-12" charset="utf-8"></script>
-
-									<script type="text/javascript">
-
-										Ecwid.init();
-
-									</script>
-
+								<div class="nav-icons" id="cart-btn"
+									style="cursor: pointer; margin-left: 20px; position: relative;">
+									<i class="fas fa-shopping-cart cart-icon"
+										style="font-size: 1.5rem; color: #333;"></i>
+									<span class="cart-count"
+										style="position: absolute; top: -8px; right: -8px; background-color: #25D366; color: white; padding: 2px 6px; border-radius: 50%; font-size: 0.8rem;">0</span>
 								</div>
+
+								<!-- Ecwid scripts removed -->
 
 							</div>
 
-						</nav>
-
 					</div>
+
+					</nav>
 
 				</div>
 
@@ -196,27 +200,39 @@
 
 		</div>
 
+		</div>
+
 		<div id="parallax" class="header-content d-flex align-items-center">
 
-			<div class="header-shape shape-one layer" data-depth="0.10"> <img src="assets/images/banner/shape/shape-1.png" alt="Shape"> </div>
+			<div class="header-shape shape-one layer" data-depth="0.10"> <img
+					src="assets/images/banner/shape/shape-1.png" alt="Shape"> </div>
 
-			<div class="header-shape shape-tow layer" data-depth="0.30"> <img src="assets/images/banner/shape/shape-2.png" alt="Shape"> </div>
+			<div class="header-shape shape-tow layer" data-depth="0.30"> <img
+					src="assets/images/banner/shape/shape-2.png" alt="Shape"> </div>
 
-			<div class="header-shape shape-three layer" data-depth="0.40"> <img src="assets/images/banner/shape/shape-3.png" alt="Shape"> </div>
+			<div class="header-shape shape-three layer" data-depth="0.40"> <img
+					src="assets/images/banner/shape/shape-3.png" alt="Shape"> </div>
 
-			<div class="header-shape shape-fore layer" data-depth="0.60"> <img src="assets/images/banner/shape/shape-2.png" alt="Shape"> </div>
+			<div class="header-shape shape-fore layer" data-depth="0.60"> <img
+					src="assets/images/banner/shape/shape-2.png" alt="Shape"> </div>
 
-			<div class="header-shape shape-five layer" data-depth="0.20"> <img src="assets/images/banner/shape/shape-1.png" alt="Shape"> </div>
+			<div class="header-shape shape-five layer" data-depth="0.20"> <img
+					src="assets/images/banner/shape/shape-1.png" alt="Shape"> </div>
 
-			<div class="header-shape shape-six layer" data-depth="0.15"> <img src="assets/images/banner/shape/shape-4.png" alt="Shape"> </div>
+			<div class="header-shape shape-six layer" data-depth="0.15"> <img
+					src="assets/images/banner/shape/shape-4.png" alt="Shape"> </div>
 
-			<div class="header-shape shape-seven layer" data-depth="0.50"> <img src="assets/images/banner/shape/shape-5.png" alt="Shape"> </div>
+			<div class="header-shape shape-seven layer" data-depth="0.50"> <img
+					src="assets/images/banner/shape/shape-5.png" alt="Shape"> </div>
 
-			<div class="header-shape shape-eight layer" data-depth="0.40"> <img src="assets/images/banner/shape/shape-3.png" alt="Shape"> </div>
+			<div class="header-shape shape-eight layer" data-depth="0.40"> <img
+					src="assets/images/banner/shape/shape-3.png" alt="Shape"> </div>
 
-			<div class="header-shape shape-nine layer" data-depth="0.20"> <img src="assets/images/banner/shape/shape-6.png" alt="Shape"> </div>
+			<div class="header-shape shape-nine layer" data-depth="0.20"> <img
+					src="assets/images/banner/shape/shape-6.png" alt="Shape"> </div>
 
-			<div class="header-shape shape-ten layer" data-depth="0.30"> <img src="assets/images/banner/shape/shape-3.png" alt="Shape"> </div>
+			<div class="header-shape shape-ten layer" data-depth="0.30"> <img
+					src="assets/images/banner/shape/shape-3.png" alt="Shape"> </div>
 
 			<div class="container">
 
@@ -230,13 +246,15 @@
 
 							<h1 class="title">Miguel Rodriguez</h1>
 
-							<p>Analista de sistemas, Analista GeneXus, Desarrollador web & móvil, Analista de seguridad cibernética.</p><a class="main-btn page-scroll" href="#work">Ver mis trabajos</a> </div>
+							<p>Analista de sistemas, Analista GeneXus, Desarrollador web & móvil, Analista de seguridad
+								cibernética.</p><a class="main-btn page-scroll" href="#work">Ver mis trabajos</a>
+						</div>
 
 					</div>
 
 					<div class="col-lg-6 offset-xl-1">
 
-						<div class="header-image d-none d-lg-block"> <img src="assets/images/banner/mr.webp" > </div>
+						<div class="header-image d-none d-lg-block"> <img src="assets/images/banner/mr.webp"> </div>
 
 					</div>
 
@@ -256,13 +274,17 @@
 
 								<ul>
 
-									<li><a href="https://www.facebook.com/mrtechdev.py" target="_blank"><i class="lni-facebook-filled"></i></a></li>
+									<li><a href="https://www.facebook.com/mrtechdev.py" target="_blank"><i
+												class="lni-facebook-filled"></i></a></li>
 
-									<li><a href="https://www.instagram.com/mrtechdev/" target="_blank"><i class="lni-instagram-original"></i></a></li>
+									<li><a href="https://www.instagram.com/mrtechdev/" target="_blank"><i
+												class="lni-instagram-original"></i></a></li>
 
-									<li><a href="https://wa.me/595981454256" target="_blank"><i class="lni-whatsapp"></i></a></li>
+									<li><a href="https://wa.me/595981454256" target="_blank"><i
+												class="lni-whatsapp"></i></a></li>
 
-									<li><a href="https://py.linkedin.com/in/miguel-angel-rodriguez-martinez-37a85a1a5" target="_blank"><i class="lni-linkedin-original"></i></a></li>
+									<li><a href="https://py.linkedin.com/in/miguel-angel-rodriguez-martinez-37a85a1a5"
+											target="_blank"><i class="lni-linkedin-original"></i></a></li>
 
 								</ul>
 
@@ -292,15 +314,26 @@
 
 						<h2 class="title">Acerca</h2>
 
-						<p align="justify">MR.TECHDEV es una empresa que se dedica a ayudar a los emprendedores a optimizar el uso de sus recursos a través de la implantación de soluciones tecnológicas. Nuestro objetivo es proporcionar a nuestros clientes las herramientas necesarias para que puedan alcanzar sus objetivos de negocio de forma eficiente y rentable.
+						<p align="justify">MR.TECHDEV es una empresa que se dedica a ayudar a los emprendedores a
+							optimizar el uso de sus recursos a través de la implantación de soluciones tecnológicas.
+							Nuestro objetivo es proporcionar a nuestros clientes las herramientas necesarias para que
+							puedan alcanzar sus objetivos de negocio de forma eficiente y rentable.
 
 
 
-                            Se ofrecen servicios especializados respaldados por una amplia experiencia en el desarrollo e implementación de soluciones tecnológicas. El enfoque está orientado a proporcionar un servicio altamente personalizado, analizando en profundidad las necesidades de cada cliente para diseñar soluciones innovadoras, efectivas y accesibles. Cada proyecto se aborda con dedicación y compromiso, garantizando resultados que superen expectativas y generen un impacto positivo.</p>
+							Se ofrecen servicios especializados respaldados por una amplia experiencia en el desarrollo
+							e implementación de soluciones tecnológicas. El enfoque está orientado a proporcionar un
+							servicio altamente personalizado, analizando en profundidad las necesidades de cada cliente
+							para diseñar soluciones innovadoras, efectivas y accesibles. Cada proyecto se aborda con
+							dedicación y compromiso, garantizando resultados que superen expectativas y generen un
+							impacto positivo.</p>
 
-                            
 
-                            <p align="justify">Si usted es un emprendedor que está buscando formas de optimizar el uso de sus recursos, le invitamos a ponerse en contacto con nosotros para obtener más información sobre nuestros servicios. Estaremos encantados de ayudarle a alcanzar sus objetivos de negocio.</p>
+
+						<p align="justify">Si usted es un emprendedor que está buscando formas de optimizar el uso de
+							sus recursos, le invitamos a ponerse en contacto con nosotros para obtener más información
+							sobre nuestros servicios. Estaremos encantados de ayudarle a alcanzar sus objetivos de
+							negocio.</p>
 
 					</div>
 
@@ -316,7 +349,13 @@
 
 						<h5 class="about-title">¿Quién es Miguel Rodriguez?</h5>
 
-						<p>Especialista en tecnología con amplia experiencia en el desarrollo, diseño y gestión estratégica de proyectos tecnológicos. Mi enfoque profesional se basa en la proactividad, la precisión metodológica y la adaptabilidad dinámica, atributos que garantizan la entrega de soluciones efectivas y sostenibles. Análisis sistémico, modelado de procesos, resolución de problemas complejos y optimización de recursos, orientadas a generar resultados tangibles y escalables. Mi compromiso con la excelencia operativa y la innovación me permite transformar desafíos en oportunidades, impulsando la evolución y el éxito organizacional.</p>
+						<p>Especialista en tecnología con amplia experiencia en el desarrollo, diseño y gestión
+							estratégica de proyectos tecnológicos. Mi enfoque profesional se basa en la proactividad, la
+							precisión metodológica y la adaptabilidad dinámica, atributos que garantizan la entrega de
+							soluciones efectivas y sostenibles. Análisis sistémico, modelado de procesos, resolución de
+							problemas complejos y optimización de recursos, orientadas a generar resultados tangibles y
+							escalables. Mi compromiso con la excelencia operativa y la innovación me permite transformar
+							desafíos en oportunidades, impulsando la evolución y el éxito organizacional.</p>
 
 						<ul class="clearfix">
 
@@ -398,7 +437,8 @@
 
 							<div class="skill-header">
 
-								<h6 class="skill-title">UI & UX</h6> </div>
+								<h6 class="skill-title">UI & UX</h6>
+							</div>
 
 							<div class="skill-bar">
 
@@ -416,7 +456,8 @@
 
 							<div class="skill-header">
 
-								<h6 class="skill-title">OWASP</h6> </div>
+								<h6 class="skill-title">OWASP</h6>
+							</div>
 
 							<div class="skill-bar">
 
@@ -434,7 +475,8 @@
 
 							<div class="skill-header">
 
-								<h6 class="skill-title">Frontend</h6> </div>
+								<h6 class="skill-title">Frontend</h6>
+							</div>
 
 							<div class="skill-bar">
 
@@ -452,7 +494,8 @@
 
 							<div class="skill-header">
 
-								<h6 class="skill-title">Backend</h6> </div>
+								<h6 class="skill-title">Backend</h6>
+							</div>
 
 							<div class="skill-bar">
 
@@ -508,7 +551,10 @@
 
 							<h4 class="service-title"><a href="#contact">Desarrollo de Software</a></h4>
 
-							<p align="justify">Análisis, desarrollo e implementación de software basado en web que podés operar desde donde estés y desde cualquier dispositivo que tengas acceso a internet o red. Planeamos arquitectura de base de datos, entidades, roles, flujos de procesos y datos, con metodologías ágiles.</p>
+							<p align="justify">Análisis, desarrollo e implementación de software basado en web que podés
+								operar desde donde estés y desde cualquier dispositivo que tengas acceso a internet o
+								red. Planeamos arquitectura de base de datos, entidades, roles, flujos de procesos y
+								datos, con metodologías ágiles.</p>
 
 						</div>
 
@@ -526,7 +572,10 @@
 
 							<h4 class="service-title"><a href="#contact">Diseño Gráfico</a></h4>
 
-							<p align="justify">Diseño de Logotipos, Identidad Corporativa, Diseño Editorial, Diseño Gráfico para Eventos (congresos, seminarios, cursos, presentaciones, etc.), Diseño de Envases y Etiquetas (packaging y labeling), Diseño de Folletos, Brochures y Flyers & Diseño de Carteles.</p>
+							<p align="justify">Diseño de Logotipos, Identidad Corporativa, Diseño Editorial, Diseño
+								Gráfico para Eventos (congresos, seminarios, cursos, presentaciones, etc.), Diseño de
+								Envases y Etiquetas (packaging y labeling), Diseño de Folletos, Brochures y Flyers &
+								Diseño de Carteles.</p>
 
 						</div>
 
@@ -544,7 +593,9 @@
 
 							<h4 class="service-title"><a href="#contact">Desarrollo de Aplicaciones</a></h4>
 
-							<p align="justify">Diseño y desarrollo de Apps (aplicaciones móviles) nativas e híbridas, desde cero, para smartphones y tabletas con iOS y Android. Notificaciones Push y Chatbots. Integramos a cualquier otro sistema de gestión o ERP preexistente.</p>
+							<p align="justify">Diseño y desarrollo de Apps (aplicaciones móviles) nativas e híbridas,
+								desde cero, para smartphones y tabletas con iOS y Android. Notificaciones Push y
+								Chatbots. Integramos a cualquier otro sistema de gestión o ERP preexistente.</p>
 
 						</div>
 
@@ -562,7 +613,9 @@
 
 							<h4 class="service-title"><a href="#contact">Seguridad y Respaldos</a></h4>
 
-							<p align="justify">Implementación de soluciones de seguridad, control de navegación y antivirus. Control de ejecución de sistema de copia de seguridad y recuperación, migración de bases de datos y optimización de instancias.</p>
+							<p align="justify">Implementación de soluciones de seguridad, control de navegación y
+								antivirus. Control de ejecución de sistema de copia de seguridad y recuperación,
+								migración de bases de datos y optimización de instancias.</p>
 
 						</div>
 
@@ -580,7 +633,9 @@
 
 							<h4 class="service-title"><a href="#contact">Desarrollo Web</a></h4>
 
-							<p align="justify">Diseño, programación, mantenimiento de sitios y páginas web optimizados para uso en computadoras y dispositivos móviles (Responsive design / diseño adaptivo). Gestión de dominios Y alojamiento web.</p>
+							<p align="justify">Diseño, programación, mantenimiento de sitios y páginas web optimizados
+								para uso en computadoras y dispositivos móviles (Responsive design / diseño adaptivo).
+								Gestión de dominios Y alojamiento web.</p>
 
 						</div>
 
@@ -598,7 +653,9 @@
 
 							<h4 class="service-title"><a href="#contact">Asesoramiento y Soporte</a></h4>
 
-							<p align="justify">Asesoramos sobre cualquier cuestión relacionada al uso y gestión de servicios y/o productos informáticos. Soporte técnico para resolución de problemas de manera presencial o remota.</p>
+							<p align="justify">Asesoramos sobre cualquier cuestión relacionada al uso y gestión de
+								servicios y/o productos informáticos. Soporte técnico para resolución de problemas de
+								manera presencial o remota.</p>
 
 						</div>
 
@@ -632,25 +689,18 @@
 
 			</div>
 
-			<div id="my-store-83675518"></div>
-
-			<div>
-
-				<script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?83675518&data_platform=code&data_date=2023-01-12" charset="utf-8"></script>
-
-				<script type="text/javascript">
-
-					xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60) table(60)","categoryView=grid","searchView=list","id=my-store-83675518");
-
-				</script>
-
+			<div id="products-container" class="products-grid">
+				<!-- Los productos se cargarán aquí -->
 			</div>
+
+			<!-- Ecwid removed -->
 
 		</div>
 
 	</section>
 
-	<section id="call-to-action" class="call-to-action pt-125 pb-130 bg_cover" style="background-image: url(assets/images/ima.webp)">
+	<section id="call-to-action" class="call-to-action pt-125 pb-130 bg_cover"
+		style="background-image: url(assets/images/ima.webp)">
 
 		<div class="container">
 
@@ -664,15 +714,22 @@
 
 						<h2 class="action-title">SIIGCE</h2>
 
-						<p align="justify">Sistema informático integrado de gestión y control empresarial (SIIGCE) es un software multiplataforma, flexible y modular, con la arquitectura cliente servidor, por lo cual podrán instalarse desde una computadora básica hasta un servidor con todas las políticas de seguridad y control.</p>
+						<p align="justify">Sistema informático integrado de gestión y control empresarial (SIIGCE) es un
+							software multiplataforma, flexible y modular, con la arquitectura cliente servidor, por lo
+							cual podrán instalarse desde una computadora básica hasta un servidor con todas las
+							políticas de seguridad y control.</p>
 
-						<p align="justify" class="description-invoicer"> Si no cuentas con un sistema de facturación o el sistema que usas no cumple tus expectativas. enviame un mensaje y agendamos una demostración
+						<p align="justify" class="description-invoicer"> Si no cuentas con un sistema de facturación o
+							el sistema que usas no cumple tus expectativas. enviame un mensaje y agendamos una
+							demostración
 
-							<h7><span class="badge badge-light text-wrap">GRATIS</span></h7>. </p>
+							<h7><span class="badge badge-light text-wrap">GRATIS</span></h7>.
+						</p>
 
 						<ul>
 
-							<li><a class="main-btn custom page-scroll" href="#contact" target="_blank">Contactanos</a></li>
+							<li><a class="main-btn custom page-scroll" href="#contact" target="_blank">Contactanos</a>
+							</li>
 
 						</ul>
 
@@ -698,7 +755,9 @@
 
 						<h2 class="title">Mis trabajos recientes</h2>
 
-						<p>Mi política de trabajo consiste en lograr la mayor satisfacción de mis clientes, brindando los mejores servicios en soluciones informáticas y tecnológicas, dentro de los parámetros legales aplicables, orientado hacia la mejora contínua.</p>
+						<p>Mi política de trabajo consiste en lograr la mayor satisfacción de mis clientes, brindando
+							los mejores servicios en soluciones informáticas y tecnológicas, dentro de los parámetros
+							legales aplicables, orientado hacia la mejora contínua.</p>
 
 					</div>
 
@@ -722,9 +781,11 @@
 
 								<ul>
 
-									<li><a class="image-popup" href="assets/images/work/radiosi.webp"><i class="lni-plus"></i></a></li>
+									<li><a class="image-popup" href="assets/images/work/radiosi.webp"><i
+												class="lni-plus"></i></a></li>
 
-									<li><a href="https://www.radiosi.com.py/" target="_blank"><i class="lni-link"></i></a></li>
+									<li><a href="https://www.radiosi.com.py/" target="_blank"><i
+												class="lni-link"></i></a></li>
 
 								</ul>
 
@@ -750,9 +811,11 @@
 
 								<ul>
 
-									<li><a class="image-popup" href="assets/images/work/sanroquefm.webp"><i class="lni-plus"></i></a></li>
+									<li><a class="image-popup" href="assets/images/work/sanroquefm.webp"><i
+												class="lni-plus"></i></a></li>
 
-									<li><a href="https://www.radiosanroque.com.py/" target="_blank"><i class="lni-link"></i></a></li>
+									<li><a href="https://www.radiosanroque.com.py/" target="_blank"><i
+												class="lni-link"></i></a></li>
 
 								</ul>
 
@@ -778,9 +841,11 @@
 
 								<ul>
 
-									<li><a class="image-popup" href="assets/images/work/abundancia.webp"><i class="lni-plus"></i></a></li>
+									<li><a class="image-popup" href="assets/images/work/abundancia.webp"><i
+												class="lni-plus"></i></a></li>
 
-									<li><a href="https://www.abundancia.com.py/" target="_blank"><i class="lni-link"></i></a></li>
+									<li><a href="https://www.abundancia.com.py/" target="_blank"><i
+												class="lni-link"></i></a></li>
 
 								</ul>
 
@@ -806,9 +871,11 @@
 
 								<ul>
 
-									<li><a class="image-popup" href="assets/images/work/SIGCE.webp"><i class="lni-plus"></i></a></li>
+									<li><a class="image-popup" href="assets/images/work/SIGCE.webp"><i
+												class="lni-plus"></i></a></li>
 
-									<li><a href="https://sigce.github.io/py/" target="_blank"><i class="lni-link"></i></a></li>
+									<li><a href="https://sigce.github.io/py/" target="_blank"><i
+												class="lni-link"></i></a></li>
 
 								</ul>
 
@@ -834,7 +901,8 @@
 
 								<ul>
 
-									<li><a class="image-popup" href="assets/images/work/socialmedia.webp"><i class="lni-plus"></i></a></li>
+									<li><a class="image-popup" href="assets/images/work/socialmedia.webp"><i
+												class="lni-plus"></i></a></li>
 
 								</ul>
 
@@ -860,7 +928,8 @@
 
 								<ul>
 
-									<li><a class="image-popup" href="assets/images/work/BI-SIGCE.webp"><i class="lni-plus"></i></a></li>
+									<li><a class="image-popup" href="assets/images/work/BI-SIGCE.webp"><i
+												class="lni-plus"></i></a></li>
 
 								</ul>
 
@@ -896,7 +965,8 @@
 
 						<h2 class="title">Radio streaming</h2>
 
-						<p>Brindamos soluciones en transmisión de audio vía Internet para radios online.</p><br><br></div>
+						<p>Brindamos soluciones en transmisión de audio vía Internet para radios online.</p><br><br>
+					</div>
 
 				</div>
 
@@ -920,29 +990,37 @@
 
 					<div class="slider_container" hidden>
 
-						<div class="current-time">00:00</div><input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+						<div class="current-time">00:00</div><input type="range" min="1" max="100" value="0"
+							class="seek_slider" onchange="seekTo()">
 
 						<div class="total-duration">00:00</div>
 
 					</div>
 
-					<div class="slider_container"> <i class="fa fa-volume-down"></i> <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()"> <i class="fa fa-volume-up"></i> </div>
+					<div class="slider_container"> <i class="fa fa-volume-down"></i> <input type="range" min="1"
+							max="100" value="99" class="volume_slider" onchange="setVolume()"> <i
+							class="fa fa-volume-up"></i> </div>
 
 					<div class="buttons" style="align-content: center;">
 
-						<div class="random-track" onclick="randomTrack()" hidden> <i class="fas fa-random fa-2x" title="random"></i> </div>
+						<div class="random-track" onclick="randomTrack()" hidden> <i class="fas fa-random fa-2x"
+								title="random"></i> </div>
 
 						<div class="prev-track" onclick="prevTrack()"> <i class="fa fa-step-backward fa-2x"></i> </div>
 
-						<div class="playpause-track" onclick="playpauseTrack()"> <i class="fa fa-play-circle fa-5x"></i> </div>
+						<div class="playpause-track" onclick="playpauseTrack()"> <i class="fa fa-play-circle fa-5x"></i>
+						</div>
 
 						<div class="next-track" onclick="nextTrack()"> <i class="fa fa-step-forward fa-2x"></i> </div>
 
-						<div class="repeat-track" onclick="repeatTrack()" hidden> <i class="fa fa-repeat fa-2x" title="repeat"></i> </div>
+						<div class="repeat-track" onclick="repeatTrack()" hidden> <i class="fa fa-repeat fa-2x"
+								title="repeat"></i> </div>
 
 					</div>
 
-					<div id="wave"> <span class="stroke"></span> <span class="stroke"></span> <span class="stroke"></span> <span class="stroke"></span> <span class="stroke"></span> <span class="stroke"></span> <span class="stroke"></span> </div>
+					<div id="wave"> <span class="stroke"></span> <span class="stroke"></span> <span
+							class="stroke"></span> <span class="stroke"></span> <span class="stroke"></span> <span
+							class="stroke"></span> <span class="stroke"></span> </div>
 
 				</div>
 
@@ -952,7 +1030,8 @@
 
 	</section>
 
-	<section id="call-to-action1" class="call-to-action1 pt-125 pb-130 bg_cover" style="background-image: url(assets/images/jobs.webp)">
+	<section id="call-to-action1" class="call-to-action1 pt-125 pb-130 bg_cover"
+		style="background-image: url(assets/images/jobs.webp)">
 
 		<div class="container">
 
@@ -964,7 +1043,8 @@
 
 						<h3>"La única manera de hacer un trabajo genial, es amar lo que haces".</h3>
 
-						<h5 class="title">~Steve Jobs</h5> </div>
+						<h5 class="title">~Steve Jobs</h5>
+					</div>
 
 				</div>
 
@@ -986,7 +1066,10 @@
 
 						<h2 class="title">Contáctame</h2>
 
-						<p align="justify">La innovación comienza contigo. Póngase en contacto y descubra cómo hemos ayudado a empresas como la suya a aprovechar los beneficios de la tecnología e impulsa el crecimiento de su emprendimiento.Sin embargo, si tiene otra solicitud o pregunta, no dude en contáctarme.</p>
+						<p align="justify">La innovación comienza contigo. Póngase en contacto y descubra cómo hemos
+							ayudado a empresas como la suya a aprovechar los beneficios de la tecnología e impulsa el
+							crecimiento de su emprendimiento.Sin embargo, si tiene otra solicitud o pregunta, no dude en
+							contáctarme.</p>
 
 					</div>
 
@@ -1070,17 +1153,21 @@
 
 					<div class="contact-form pt-30">
 
-						<form id="contact-form" Action="https://getform.io/f/c8ba6c8b-d079-435f-851f-f972c174b36a" method="post">
+						<form id="contact-form" Action="https://getform.io/f/c8ba6c8b-d079-435f-851f-f972c174b36a"
+							method="post">
 
-							<div class="single-form"> <input type="text" name="name" placeholder="Nombre" required=""> </div>
+							<div class="single-form"> <input type="text" name="name" placeholder="Nombre" required="">
+							</div>
 
-							<div class="single-form"> <input type="email" name="email" placeholder="Email" required=""> </div>
+							<div class="single-form"> <input type="email" name="email" placeholder="Email" required="">
+							</div>
 
 							<div class="single-form"> <textarea name="message" placeholder="Mensaje"></textarea> </div>
 
 							<p class="form-message"></p>
 
-							<div class="single-form"> <button class="main-btn" type="submit" name="Enviar">Enviar</button> </div>
+							<div class="single-form"> <button class="main-btn" type="submit"
+									name="Enviar">Enviar</button> </div>
 
 						</form>
 
@@ -1092,7 +1179,9 @@
 
 					<div class="contact-map mt-60">
 
-						<div class="gmap_canvas"> <iframe id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29051.450578032756!2d-55.7095243!3d-24.4705079!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x944df8441c064e1f!2sSIGCE!5e0!3m2!1ses-419!2spy!4v1673524952284!5m2!1ses-419!2spy" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe> </div>
+						<div class="gmap_canvas"> <iframe id="gmap_canvas"
+								src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29051.450578032756!2d-55.7095243!3d-24.4705079!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x944df8441c064e1f!2sSIGCE!5e0!3m2!1ses-419!2spy!4v1673524952284!5m2!1ses-419!2spy"
+								frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe> </div>
 
 					</div>
 
@@ -1124,11 +1213,14 @@
 
 							<ul>
 
-								<li><a href="https://www.facebook.com/mrtechdev.py" target="_blank"><i class="lni-facebook-filled"></i></a></li>
+								<li><a href="https://www.facebook.com/mrtechdev.py" target="_blank"><i
+											class="lni-facebook-filled"></i></a></li>
 
-								<li><a href="https://www.instagram.com/mrtechdev/" target="_blank"><i class="lni-instagram-original"></i></a></li>
+								<li><a href="https://www.instagram.com/mrtechdev/" target="_blank"><i
+											class="lni-instagram-original"></i></a></li>
 
-								<li><a href="https://py.linkedin.com/in/miguel-angel-rodriguez-martinez-37a85a1a5" target="_blank"><i class="lni-linkedin-original"></i></a></li>
+								<li><a href="https://py.linkedin.com/in/miguel-angel-rodriguez-martinez-37a85a1a5"
+										target="_blank"><i class="lni-linkedin-original"></i></a></li>
 
 							</ul>
 
@@ -1168,6 +1260,29 @@
 
 	</footer> <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
 
+	<!-- Carrito Modal -->
+	<div class="cart-modal" id="cart-modal">
+		<div class="cart-content">
+			<div class="cart-header">
+				<h3>Tu Carrito</h3>
+				<button class="close-cart" id="close-cart">&times;</button>
+			</div>
+
+			<div class="cart-items" id="cart-items">
+				<!-- Items del carrito -->
+				<p style="text-align: center; color: #6c757d; margin-top: 2rem;">Tu carrito está vacío</p>
+			</div>
+
+			<div class="cart-footer">
+				<div class="cart-total">
+					<span>Total:</span>
+					<span id="cart-total-price">Gs. 0</span>
+				</div>
+				<button class="checkout-btn"><i class="fab fa-whatsapp"></i> Enviar Pedido por WhatsApp</button>
+			</div>
+		</div>
+	</div>
+
 	<script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
 
 	<script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
@@ -1191,6 +1306,10 @@
 	<script src="assets/js/jquery.easing.min.js"></script>
 
 	<script src="assets/js/main.js"></script>
+
+	<!-- Scripts Tienda -->
+	<script src="tienda-codigos/products.js"></script>
+	<script src="tienda-codigos/app.js"></script>
 
 </body>
 
